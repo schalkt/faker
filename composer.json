@@ -1,0 +1,40 @@
+{
+    "name": "schalkt/faker",
+    "version": "0.0.1",
+    "description": "Simple and easy faker system for PHP",
+    "keywords": [
+        "faker",
+        "php",
+        "simple",
+        "easy"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tamas Schalk",
+            "homepage": "https://github.com/schalkt"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Schalkt\\Faker\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Schalkt\\Faker\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": [
+            "./vendor/bin/phpunit"
+        ]
+    }
+}
