@@ -20,8 +20,8 @@ class Faker
 
     protected $options = [
         'nextChar' => [
-            'sameChar' => 0.07, // percent 0-1
-            'sameType' => 0.14, // percent 0-1
+            'sameChar' => 0.04, // percent 0-1
+            'sameType' => 0.07, // percent 0-1
         ]
     ];
 
@@ -55,8 +55,10 @@ class Faker
      * @param  mixed $first
      * @return void
      */
-    public function word($length = 2, $first = self::FIRST_CONSONANT)
+    public function word($length = null, $first = self::FIRST_CONSONANT)
     {
+
+        $length = $length === null ? rand(3, 10) : $length;
 
         $char1 = ($first === self::FIRST_CONSONANT) ? $this->getRandomConsonant() : $this->getRandomVowel();
         $word = [$char1];
@@ -66,6 +68,60 @@ class Faker
         }
 
         return implode($word);
+    }
+    
+    /**
+     * words
+     *
+     * @param  mixed $count
+     * @return void
+     */
+    public function words($count = 4, $glue = ' ', $min = 4, $max = 7)
+    {
+
+        $words = [];
+        
+        for ($i = 0; $i < $count; $i++) {
+            $words[] = $this->word(rand($min, $max));
+        }
+
+        return implode($glue, $words);
+
+    }
+
+    
+    /**
+     * sentence
+     *
+     * @param  mixed $length
+     * @return void
+     */
+    public function sentence($length = null)
+    {
+
+        $sentence = $this->words($length, ' ', 2, 14);
+        return ucfirst($sentence). '.';
+        
+    }
+
+
+    /**
+     * text
+     *
+     * @param  int $sentences
+     * @return void
+     */
+    public function text($sentences = 5, $min = 4, $max = 7)
+    {
+
+        $text = [];
+        
+        for ($i = 0; $i < $sentences - 1; $i++) {
+            $text[] = $this->sentence(rand($min, $max));
+        }
+
+        return implode(' ', $text);
+        
     }
 
 

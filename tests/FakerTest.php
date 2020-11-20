@@ -19,11 +19,14 @@ final class FakerTest extends TestCase
 		$faker = Faker::init();
 
 		$words = [];
-		$words[] = $faker->word();
+		$words[] = $faker->word(2);
 		$words[] = $faker->word(3);
 		$words[] = $faker->word(5);
 		$words[] = $faker->word(7, Faker::FIRST_VOWEL);
 		$words[] = $faker->word(14);
+		$words[] = $faker->words(20, ', ');
+		$words[] = $faker->sentence(20);
+		$words[] = $faker->text(20, 3, 7);
 
 		print_r($words);
 
