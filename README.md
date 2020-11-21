@@ -22,6 +22,9 @@
     $faker->sentence(20);
     $faker->text(20, 3, 7);
     $faker->mask('###-###-###-###', 'ABCDEFG');
-    $faker->intmask('##-##-##-##', 0, 1);
+    $faker->mask('##-##-##-##', '01');
+    $faker->int(1,100);
+    $faker->boolean();
+
 
 ```

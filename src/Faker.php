@@ -15,13 +15,20 @@ class Faker
     protected $vowels = 'aeiou';
     protected $consonants = 'bcdfghjklmnpqrstvwxyz';
 
+    protected $vowelsDouble = ['ai', 'ue', 'oa', 'ou', 'oo', 'ee', 'ui', 'ea', 'oi'];
+    protected $consonantsDouble = ['sh', 'th', 'ck', 'gh', 'wh', 'ch', 'ph'];
+    // 'ty', 'cy',  'ry', 'sy', 'ly'
+
     protected $vowelsCount = 5;
     protected $consonantsCount = 21;
 
     protected $options = [
+        'vowels' => '',
+        'consonants' => '',
         'nextChar' => [
-            'sameChar' => 0.04, // percent 0-1
-            'sameType' => 0.07, // percent 0-1
+            'sameChar' => 0.02, // percent between 0-1
+            'sameType' => 0.04, // percent between 0-1
+            'double' => 0.01, // percent between 0-1
         ]
     ];
 
@@ -33,7 +40,18 @@ class Faker
      */
     public function __construct(array $options)
     {
-        //$this->options = \array_replace_recursive((array)$this->$options, (array)$options);    
+
+        $this->options = \array_replace_recursive($this->options, $options);
+
+        if (!empty($options['vowels'])) {
+            $this->vowels = trim($options['vowels']);
+            $this->vowelsCount = strlen($this->vowels);
+        }
+
+        if (!empty($options['consonants'])) {
+            $this->consonants = trim($options['consonants']);
+            $this->consonantsCount = strlen($this->consonants);
+        }
     }
 
     /**
@@ -55,10 +73,11 @@ class Faker
      * @param  mixed $first
      * @return void
      */
-    public function word($length = null, $first = self::FIRST_CONSONANT)
+    public function word($length = null, $first = null)
     {
 
         $length = $length === null ? rand(3, 10) : $length;
+        $first = $first === null ? array_rand([self::FIRST_VOWEL, self::FIRST_CONSONANT]) : $first;
 
         $char1 = ($first === self::FIRST_CONSONANT) ? $this->getRandomConsonant() : $this->getRandomVowel();
         $word = [$char1];
@@ -69,7 +88,7 @@ class Faker
 
         return implode($word);
     }
-    
+
     /**
      * words
      *
@@ -80,16 +99,15 @@ class Faker
     {
 
         $words = [];
-        
+
         for ($i = 0; $i < $count; $i++) {
             $words[] = $this->word(rand($min, $max));
         }
 
         return implode($glue, $words);
-
     }
 
-    
+
     /**
      * sentence
      *
@@ -100,8 +118,7 @@ class Faker
     {
 
         $sentence = $this->words($length, ' ', 2, 14);
-        return ucfirst($sentence). '.';
-        
+        return ucfirst($sentence) . '.';
     }
 
 
@@ -115,38 +132,51 @@ class Faker
     {
 
         $text = [];
-        
+
         for ($i = 0; $i < $sentences - 1; $i++) {
             $text[] = $this->sentence(rand($min, $max));
         }
 
         return implode(' ', $text);
-        
     }
+
 
 
     /**
      * getRandomConsonant
      *
+     * @param  mixed $double
      * @return void
      */
-    protected function getRandomConsonant()
+    protected function getRandomConsonant($double = false)
     {
 
-        $position = rand(0, $this->consonantsCount - 1);
-        return $this->consonants[$position];
+        if ($double) {
+            $position = rand(0, count($this->consonantsDouble) - 1);
+            return $this->consonantsDouble[$position];
+        } else {
+            $position = rand(0, $this->consonantsCount - 1);
+            return $this->consonants[$position];
+        }
     }
+
 
     /**
      * getRandomVowel
      *
+     * @param  mixed $double
      * @return void
      */
-    protected function getRandomVowel()
+    protected function getRandomVowel($double = false)
     {
 
-        $position = rand(0, $this->vowelsCount - 1);
-        return $this->vowels[$position];
+        if ($double) {
+            $position = rand(0, count($this->vowelsDouble) - 1);
+            return $this->vowelsDouble[$position];
+        } else {
+            $position = rand(0, $this->vowelsCount - 1);
+            return $this->vowels[$position];
+        }
     }
 
 
@@ -169,6 +199,12 @@ class Faker
 
         if ($this->options['nextChar']['sameType'] > $r2) {
             return $this->isVowel($prev) ? $this->getRandomVowel() : $this->getRandomConsonant();
+        }
+
+        $r3 = rand(1, 100) / 100;
+
+        if ($this->options['nextChar']['double'] > $r3) {
+            return $this->isVowel($prev) ? $this->getRandomVowel(true) : $this->getRandomConsonant(true);
         }
 
         return $this->isVowel($prev) ? $this->getRandomConsonant() : $this->getRandomVowel();
@@ -264,6 +300,17 @@ class Faker
         return rand($min, $max);
     }
 
+    /**
+     * boolean
+     *
+     * @param  mixed $min
+     * @param  mixed $max
+     * @return void
+     */
+    public function boolean()
+    {
+        return (bool)rand(0, 1);
+    }
 
 
     /**
@@ -283,30 +330,7 @@ class Faker
 
 
         foreach ($chars as $char) {
-            $output[] = $char === '#' ? $input[rand(1, $max)] : $char;
-        }
-
-        return implode('', $output);
-    }
-
-
-
-    /**
-     * intmask
-     *
-     * @param  mixed $mask
-     * @param  mixed $min
-     * @param  mixed $max
-     * @return void
-     */
-    public function intmask($mask = '###', $min = 0, $max = 9)
-    {
-
-        $chars = \str_split($mask);
-        $output = [];
-
-        foreach ($chars as $char) {
-            $output[] = $char === '#' ? rand($min, $max) : $char;
+            $output[] = $char === '#' ? $input[rand(0, $max)] : $char;
         }
 
         return implode('', $output);

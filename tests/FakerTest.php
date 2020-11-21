@@ -59,8 +59,8 @@ final class FakerTest extends TestCase
 
 		$codes = [];
 		$codes[] = $faker->mask();
-		$codes[] = $faker->mask('####-####-####-####');
-		$codes[] = $faker->mask('######...######', 'dilemma');
+		$codes[] = $faker->mask('####-####-####-####', 'ABCD');
+		$codes[] = $faker->mask('##.##.##.##.##.##', 'dilemma');
 
 		print_r($codes);
 	}
@@ -77,15 +77,53 @@ final class FakerTest extends TestCase
 		$faker = Faker::init();
 
 		$numbers = [];
-		$numbers[] = $faker->int(1);
+		$numbers[] = $faker->int(1);		
 		$numbers[] = $faker->int(1000000, 9000000);
-		$numbers[] = $faker->intmask('###-###-###-#-#-#', 0, 1);
-
+		$numbers[] = $faker->mask('###-###-###-#-#-#', '01');
+		$numbers[] = $faker->boolean() ? 'true' : 'false' ;
 
 		print_r($numbers);
 
 		$this->assertEquals(true, $numbers[0] > 0);
 		$this->assertEquals(true, $numbers[1] >= 1000000);
 		$this->assertEquals(true, strlen($numbers[2]) === 17);
+	}
+
+
+	/**
+	 * testOptions
+	 *
+	 * @return void
+	 */
+	public function testOptions()
+	{
+
+		$faker = Faker::init([
+			'vowels' => 'iea',
+			'consonants' => 'dlm',
+			'nextChar' => [
+				'sameChar' => 0.0, // percent between 0-1
+				'sameType' => 0.0, // percent between 0-1
+				'double' => 0.5, // percent between 0-1
+			]
+		]);
+
+		$words = [];
+		$words[] = $faker->word(2);
+		$words[] = $faker->word(3);
+		$words[] = $faker->word(5);
+		$words[] = $faker->word(7, Faker::FIRST_VOWEL);
+		$words[] = $faker->word(14);
+		$words[] = $faker->words(20, ', ');
+		$words[] = $faker->sentence(7);
+
+		print_r($words);
+
+		$this->assertNotEmpty($words[0]);
+		$this->assertNotEmpty($words[1]);
+		$this->assertNotEmpty($words[2]);
+		$this->assertNotEmpty($words[3]);
+		$this->assertNotEmpty($words[4]);
+
 	}
 }
