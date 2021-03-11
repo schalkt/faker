@@ -1,0 +1,13 @@
+language: php
+php:
+  - "7.4"
+branches:
+  only:
+  - master
+  - develop
+before_script:
+  - composer install
+script:
+  - composer run coverage
+after_success:
+  - git reset -hard
