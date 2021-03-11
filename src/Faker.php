@@ -14,6 +14,9 @@ class Faker
 
     protected $vowels = 'aeiou';
     protected $consonants = 'bcdfghjklmnpqrstvwxyz';
+    protected $abcLower = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    protected $abcUpper = 'abcdefghijklmnopqrstuvwxyz';
+    protected $numbers = '0123456789';
 
     protected $vowelsDouble = ['ai', 'ue', 'oa', 'ou', 'oo', 'ee', 'ui', 'ea', 'oi'];
     protected $consonantsDouble = ['sh', 'th', 'ck', 'gh', 'wh', 'ch', 'ph'];
@@ -40,7 +43,7 @@ class Faker
      * @param  array $options
      * @return Faker
      */
-    public function __construct(array $options)
+    public function __construct(array $options = [])
     {
 
         $this->options = \array_replace_recursive($this->options, $options);
@@ -56,13 +59,12 @@ class Faker
         }
 
         if (!empty($options['vowelsDouble'])) {
-            $this->vowelsDouble = $options['vowelsDouble'];            
+            $this->vowelsDouble = $options['vowelsDouble'];
         }
 
         if (!empty($options['consonantsDouble'])) {
-            $this->consonantsDouble = $options['consonantsDouble'];            
+            $this->consonantsDouble = $options['consonantsDouble'];
         }
-
     }
 
     /**
@@ -128,15 +130,51 @@ class Faker
     /**
      * sentence
      *
-     * @param  mixed $length
+     * @param  mixed $words
      * @return void
      */
-    public function sentence($length = null)
+    public function sentence($words = null)
     {
-    
-        $sentence = $this->words($length, ' ', 2, 14);
+
+        $sentence = $this->words($words, ' ', 2, 14);
         return ucfirst($sentence) . '.';
     }
+
+
+    /**
+     * chars
+     *
+     * @param  mixed $chars
+     * @param  mixed $min
+     * @param  mixed $max
+     * @param  mixed $segments
+     * @param  mixed $glue
+     * @return void
+     */
+    public function chars($chars = null, $min = 2, $max = 21, $segments = 1, $glue = '-')
+    {
+
+        $parts = [];
+        $chars = $chars !== null ? $chars : \str_shuffle($this->vowels . $this->consonants);
+        $count = strlen($chars);
+
+        for ($s = 0; $s < $segments; $s++) {
+
+            $part = '';
+            $length = rand($min, $max);
+
+            for ($i = 0; $i < $length; $i++) {
+                $part .= $chars[rand(0, $count - 1)];
+            }
+
+            $parts[] = $part;
+        }
+
+        return implode($glue, $parts);
+    }
+
+
+
 
 
     /**
@@ -335,5 +373,30 @@ class Faker
         }
 
         return implode('', $output);
+    }
+
+
+    /**
+     * email
+     *
+     * @return void
+     */
+    public function email()
+    {
+
+        return strtolower($this->words(2, '.', 3, 12)) . '@' . $this->word() . '.' . $this->words(1, '', 2, 5);
+    }
+
+
+    /**
+     * password
+     *
+     * @return void
+     */
+    public function password($min = 8, $max = 16, $segments = 2, $glue = '-')
+    {
+
+        $chars = $this->abcLower . $this->abcUpper . $this->numbers;
+        return $this->chars($chars, $min, $max, $segments, $glue);
     }
 }

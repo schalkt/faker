@@ -45,6 +45,28 @@ $codes[] = $faker->mask('##.##.##.##.##.##', 'dilemma');
 
 print_r($codes);
 
+$chars = [];
+$chars[] = $faker->chars('#', 3, 4, rand(4, 10), '-');
+$chars[] = $faker->chars('.', 4, 4, 7, 'oOo');
+$chars[] = $faker->chars('ACDELMTH23467', 2, 8, rand(4, 6), '-');
+
+print_r($chars);
+
+$emails = [];
+$emails[] = $faker->email();
+$emails[] = $faker->email();
+$emails[] = $faker->email();
+
+print_r($emails);
+
+$passwords = [];
+$passwords[] = $faker->password();
+$passwords[] = $faker->password(2, 4, 3);
+$passwords[] = $faker->password(4, 4, 3, '.');
+
+print_r($passwords);
+
+
 $numbers = [];
 $numbers[] = $faker->int(1);
 $numbers[] = $faker->int(1000000, 9000000);

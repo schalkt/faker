@@ -36,8 +36,14 @@
         "test": [
             "./vendor/bin/phpunit"
         ],
+        "coverage" : [
+            "phpdbg -qrr ./vendor/bin/phpunit --coverage-html ./coverage"
+        ],
         "demo": [
-            "php ./examples/demo1.php"
+            "php ./examples/demo.php"
+        ],
+        "readme": [
+            "php ./examples/readme.php"
         ]
     }
 }

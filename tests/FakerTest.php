@@ -5,8 +5,6 @@ namespace Schalkt\Faker\Tests;
 use PHPUnit\Framework\TestCase;
 use Schalkt\Faker\Faker;
 
-setlocale('LC_ALL', 'hu_HU.UTF-8');
-
 final class FakerTest extends TestCase
 {
 
@@ -139,7 +137,6 @@ final class FakerTest extends TestCase
 
 		$this->assertGreaterThan(2, substr_count($names[0], 'ike'));
 		$this->assertGreaterThan(2, substr_count($names[0], 'iszi'));
-		
 	}
 
 
@@ -153,6 +150,7 @@ final class FakerTest extends TestCase
 
 		$faker = Faker::init([
 			'consonantsDouble' => ['sh', 'th'],
+			'vowelsDouble' => ['oo', 'ee'],
 			'nextChar' => [
 				'sameChar' => 0.0, // percent between 0-1
 				'sameType' => 0.0, // percent between 0-1
@@ -165,6 +163,59 @@ final class FakerTest extends TestCase
 
 		$this->assertGreaterThan(2, substr_count($names[0], 'sh'));
 		$this->assertGreaterThan(2, substr_count($names[0], 'th'));
+	}
 
+	/**
+	 * testEmails
+	 *
+	 * @return void
+	 */
+	public function testEmails()
+	{
+
+		$faker = Faker::init();
+
+		$emails = [];
+		$emails[] = $faker->email();
+		$emails[] = $faker->email();
+		$emails[] = $faker->email();
+		$emails[] = $faker->email();
+
+		$this->assertEquals($emails[0], \filter_var($emails[0], \FILTER_VALIDATE_EMAIL));
+		$this->assertEquals($emails[1], \filter_var($emails[1], \FILTER_VALIDATE_EMAIL));
+		$this->assertEquals($emails[2], \filter_var($emails[2], \FILTER_VALIDATE_EMAIL));
+		$this->assertEquals($emails[3], \filter_var($emails[3], \FILTER_VALIDATE_EMAIL));
+	}
+
+	/**
+	 * testChars
+	 *
+	 * @return void
+	 */
+	public function testChars()
+	{
+
+		$faker = Faker::init();
+
+		$chars = [];
+		$chars[] = $faker->chars('.', 4, 4, 3, 'oOo');
+
+		$this->assertEquals($chars[0], '....oOo....oOo....');
+	}
+
+	/**
+	 * testPasswords
+	 *
+	 * @return void
+	 */
+	public function testPasswords()
+	{
+
+		$faker = Faker::init();
+
+		$passwords = [];
+		$passwords[] = $faker->password(4, 4, 3, '.');
+
+		$this->assertEquals(14, strlen($passwords[0]));
 	}
 }

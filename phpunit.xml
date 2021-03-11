@@ -15,4 +15,9 @@
             <file>./tests/FakerTest.php</file>
         </testsuite>
     </testsuites>
+    <filter>
+        <whitelist>
+            <directory suffix=".php">./src</directory>
+        </whitelist>
+    </filter>
 </phpunit>
