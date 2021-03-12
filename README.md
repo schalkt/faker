@@ -69,6 +69,7 @@
 
 ## Todo
 
-- array($count, $items)
-- date($format, $max, $min)
-- float($decimals, $min, $max)
+- $faker->fill($user)
+- $faker->array($count, $items)
+- $faker->date($format, $max, $min)
+- $faker->float($decimals, $min, $max)

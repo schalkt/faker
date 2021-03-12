@@ -3,11 +3,13 @@ php:
   - "7.4"
 branches:
   only:
-  - master
+  - main
   - develop
 before_script:
   - composer install
 script:
+  - composer run demo
+  - composer run readme
   - composer run coverage
 after_success:
   - git reset -hard
