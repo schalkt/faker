@@ -3,7 +3,7 @@
 > The project is under development, but this is a working and stable version.
 
 [![GitHub issues](https://img.shields.io/github/issues/schalkt/faker.svg?style=flat-square)](https://github.com/schalkt/faker/issues)
-[![Build Status](https://travis-ci.org/schalkt/faker.svg?branch=master)](https://travis-ci.org/schalkt/faker)
+[![Build Status](https://travis-ci.org/schalkt/faker.svg?branch=main)](https://travis-ci.org/schalkt/faker)
 
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=schalkt_faker&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=schalkt_faker)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=schalkt_faker&metric=security_rating)](https://sonarcloud.io/dashboard?id=schalkt_faker)
