@@ -356,7 +356,6 @@
       </line>
       <line nr="252">
         <covered by="Schalkt\Faker\Tests\FakerTest::testWords"/>
-        <covered by="Schalkt\Faker\Tests\FakerTest::testEmails"/>
       </line>
       <line nr="253">
         <covered by="Schalkt\Faker\Tests\FakerTest::testWords"/>
