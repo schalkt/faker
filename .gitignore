@@ -3,4 +3,4 @@
 .vscode
 .phpunit*
 /vendor
-/coverage
+/coverage/html

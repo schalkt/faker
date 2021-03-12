@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
+  <build time="Fri Mar 12 7:26:14 GMT+0000 2021" phpunit="8.5.14" coverage="7.0.14">
+    <runtime name="PHPDBG" version="7.4.16" url="https://secure.php.net/"/>
+    <driver name="phpdbg" version="7.4.16"/>
+  </build>
+  <project source="/var/www/store_schalk/schalk.hu/www/public/projects/faker/src">
+    <tests>
+      <test name="Schalkt\Faker\Tests\FakerTest::testWords" size="unknown" result="0" status="PASSED"/>
+      <test name="Schalkt\Faker\Tests\FakerTest::testNumbers" size="unknown" result="0" status="PASSED"/>
+      <test name="Schalkt\Faker\Tests\FakerTest::testOptions" size="unknown" result="0" status="PASSED"/>
+      <test name="Schalkt\Faker\Tests\FakerTest::testFunnyNames" size="unknown" result="0" status="PASSED"/>
+      <test name="Schalkt\Faker\Tests\FakerTest::testDoubles" size="unknown" result="0" status="PASSED"/>
+      <test name="Schalkt\Faker\Tests\FakerTest::testEmails" size="unknown" result="0" status="PASSED"/>
+      <test name="Schalkt\Faker\Tests\FakerTest::testChars" size="unknown" result="0" status="PASSED"/>
+      <test name="Schalkt\Faker\Tests\FakerTest::testPasswords" size="unknown" result="0" status="PASSED"/>
+    </tests>
+    <directory name="/">
+      <totals>
+        <lines total="398" comments="108" code="290" executable="85" executed="85" percent="100.00"/>
+        <methods count="19" tested="19" percent="100.00"/>
+        <functions count="0" tested="0" percent="0"/>
+        <classes count="1" tested="1" percent="100.00"/>
+        <traits count="0" tested="0" percent="0"/>
+      </totals>
+      <file name="Faker.php" href="Faker.php.xml">
+        <totals>
+          <lines total="398" comments="108" code="290" executable="85" executed="85" percent="100.00"/>
+          <methods count="19" tested="19" percent="100.00"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="1" tested="1" percent="100.00"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+      </file>
+    </directory>
+  </project>
+</phpunit>
