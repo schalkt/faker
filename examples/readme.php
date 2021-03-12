@@ -18,8 +18,21 @@ $items[] = $faker->mask('###-###-###-###', 'ABCDEFG');
 $items[] = $faker->mask('##-##-##-##', '01');
 $items[] = $faker->int(1,1000); // 256 
 $items[] = $faker->boolean(); // true or false
+$items[] = $faker->email(); // punuw.honiw@ajesug.gax
 $items[] = $faker->chars('.', 4, 4, 3, 'oOo'); // ....oOo....oOo....
 $items[] = $faker->password(4, 4, 3, '.'); // W2gg.lsgq.FET0
-$items[] = $faker->chars('#', 3, 3, 4, '-');
+$items[] = $faker->chars('#', 3, 3, 4, '-'); // ###-###-###-###
+
+$faker = Faker::init([
+	'vowels' => 'e',
+	'consonants' => 'bhdlmnkpstvz',
+	'nextChar' => [
+		'sameChar' => 0, // percent between 0-100
+		'sameType' => 0, // percent between 0-100
+		'double' => 0 // percent between 0-100
+	],
+]);
+
+$items[] = $faker->sentence(5); // Sedev emeze evekem ez denebebekepep
 
 print_r($items);

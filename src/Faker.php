@@ -31,9 +31,9 @@ class Faker
         'vowelsDouble' => '',
         'consonantsDouble' => '',
         'nextChar' => [
-            'sameChar' => 0.02, // percent between 0-1
-            'sameType' => 0.04, // percent between 0-1
-            'double' => 0.01, // percent between 0-1
+            'sameChar' => 2, // percent between 0-100
+            'sameType' => 4, // percent between 0-100
+            'double' => 1, // percent between 0-100
         ]
     ];
 
@@ -244,25 +244,21 @@ class Faker
     protected function getRandomNextChar($prev)
     {
 
-        $r1 = rand(1, 100) / 100;
+        $r1 = rand(1, 100);
+        $r2 = rand(1, 100);
+        $r3 = rand(1, 100);
 
         if ($this->options['nextChar']['sameChar'] > $r1) {
-            return $prev;
+            $char = $prev;
+        } else if ($this->options['nextChar']['sameType'] > $r2) {
+            $char = $this->isVowel($prev) ? $this->getRandomVowel() : $this->getRandomConsonant();
+        } else if ($this->options['nextChar']['double'] > $r3) {
+            $char = $this->isVowel($prev) ? $this->getRandomVowel(true) : $this->getRandomConsonant(true);
+        } else {
+            $char = $this->isVowel($prev) ? $this->getRandomConsonant() : $this->getRandomVowel();
         }
 
-        $r2 = rand(1, 100) / 100;
-
-        if ($this->options['nextChar']['sameType'] > $r2) {
-            return $this->isVowel($prev) ? $this->getRandomVowel() : $this->getRandomConsonant();
-        }
-
-        $r3 = rand(1, 100) / 100;
-
-        if ($this->options['nextChar']['double'] > $r3) {
-            return $this->isVowel($prev) ? $this->getRandomVowel(true) : $this->getRandomConsonant(true);
-        }
-
-        return $this->isVowel($prev) ? $this->getRandomConsonant() : $this->getRandomVowel();
+        return $char;
     }
 
     /**

@@ -79,9 +79,9 @@ $faker = Faker::init([
 	'vowels' => 'iea',
 	'consonants' => 'dlm',
 	'nextChar' => [
-		'sameChar' => 0.0, // percent between 0-1
-		'sameType' => 0.0, // percent between 0-1
-		'double' => 0.5, // percent between 0-1
+		'sameChar' => 0, // percent between 0-100
+		'sameType' => 0, // percent between 0-100
+		'double' => 50, // percent between 0-100
 	]
 ]);
 
@@ -101,9 +101,9 @@ $faker = Faker::init([
 	'vowels' => 'aeiou',
 	'consonants' => 'bcdfghjklmnprstvz',
 	'nextChar' => [
-		'sameChar' => 0.0, // percent between 0-1
-		'sameType' => 0.0, // percent between 0-1
-		'double' => 0.0 // percent between 0-1
+		'sameChar' => 0, // percent between 0-100
+		'sameType' => 0, // percent between 0-100
+		'double' => 0 // percent between 0-100
 	],
 ]);
 
@@ -117,9 +117,9 @@ $faker = Faker::init([
 	'vowels' => 'aeiou',
 	'consonants' => 'bcdfghjklmnprstvz',
 	'nextChar' => [
-		'sameChar' => 0.0, // percent between 0-1
-		'sameType' => 0.0, // percent between 0-1
-		'double' => 0.0 // percent between 0-1
+		'sameChar' => 0, // percent between 0-100
+		'sameType' => 40, // percent between 0-100
+		'double' => 0 // percent between 0-100
 	],
 ]);
 
@@ -131,16 +131,16 @@ print_r($names);
 
 $faker = Faker::init([
 	'vowels' => 'e',
-	'consonants' => 'bcdfghjklmnprstvz',
+	'consonants' => 'bhdlmnkpstvz',
 	'nextChar' => [
-		'sameChar' => 0.0, // percent between 0-1
-		'sameType' => 0.0, // percent between 0-1
-		'double' => 0.0 // percent between 0-1
+		'sameChar' => 0, // percent between 0-100
+		'sameType' => 0, // percent between 0-100
+		'double' => 0 // percent between 0-100
 	],
 ]);
 
 $sentence = [];
-$sentence[] = $faker->sentence(7);
+$sentence[] = $faker->sentence(5);
 $sentence[] = $faker->sentence(10);
 
 print_r($sentence);
@@ -150,9 +150,9 @@ $faker = Faker::init([
 	'vowels' => 'io',
 	'consonants' => 'bd',
 	'nextChar' => [
-		'sameChar' => 0.0, // percent between 0-1
-		'sameType' => 0.0, // percent between 0-1
-		'double' => 0.0 // percent between 0-1
+		'sameChar' => 0, // percent between 0-100
+		'sameType' => 0, // percent between 0-100
+		'double' => 0 // percent between 0-100
 	],
 ]);
 

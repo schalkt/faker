@@ -91,26 +91,26 @@ final class FakerTest extends TestCase
 			'vowels' => 'iea',
 			'consonants' => 'dlm',
 			'nextChar' => [
-				'sameChar' => 0.0, // percent between 0-1
-				'sameType' => 0.0, // percent between 0-1
-				'double' => 0.5, // percent between 0-1
+				'sameChar' => 0, // percent between 0-100
+				'sameType' => 0, // percent between 0-100
+				'double' => 50, // percent between 0-100
 			]
 		]);
 
-		$words = [];
-		$words[] = $faker->word(2);
-		$words[] = $faker->word(3);
-		$words[] = $faker->word(5);
-		$words[] = $faker->word(7, Faker::FIRST_VOWEL);
-		$words[] = $faker->word(14);
-		$words[] = $faker->words(20, ', ');
-		$words[] = $faker->sentence(7);
+		$wordsNext = [];
+		$wordsNext[] = $faker->word(2);
+		$wordsNext[] = $faker->word(3);
+		$wordsNext[] = $faker->word(5);
+		$wordsNext[] = $faker->word(7, Faker::FIRST_VOWEL);
+		$wordsNext[] = $faker->word(14);
+		$wordsNext[] = $faker->words(20, ', ');
+		$wordsNext[] = $faker->sentence(7);
 
-		$this->assertNotEmpty($words[0]);
-		$this->assertNotEmpty($words[1]);
-		$this->assertNotEmpty($words[2]);
-		$this->assertNotEmpty($words[3]);
-		$this->assertNotEmpty($words[4]);
+		$this->assertNotEmpty($wordsNext[0]);
+		$this->assertNotEmpty($wordsNext[1]);
+		$this->assertNotEmpty($wordsNext[2]);
+		$this->assertNotEmpty($wordsNext[3]);
+		$this->assertNotEmpty($wordsNext[4]);
 	}
 
 
@@ -126,9 +126,9 @@ final class FakerTest extends TestCase
 			'vowels' => 'aeiouöüáé',
 			'consonants' => 'bcdfghjklmnprstvz',
 			'nextChar' => [
-				'sameChar' => 0.0, // percent between 0-1
-				'sameType' => 0.0, // percent between 0-1
-				'double' => 0.0, // percent between 0-1
+				'sameChar' => 0, // percent between 0-100
+				'sameType' => 0, // percent between 0-100
+				'double' => 0, // percent between 0-100
 			],
 		]);
 
@@ -152,9 +152,9 @@ final class FakerTest extends TestCase
 			'consonantsDouble' => ['sh', 'th'],
 			'vowelsDouble' => ['oo', 'ee'],
 			'nextChar' => [
-				'sameChar' => 0.0, // percent between 0-1
-				'sameType' => 0.0, // percent between 0-1
-				'double' => 100.0, // percent between 0-1
+				'sameChar' => 0, // percent between 0-100
+				'sameType' => 0, // percent between 0-100
+				'double' => 100, // percent between 0-100
 			],
 		]);
 
@@ -200,7 +200,7 @@ final class FakerTest extends TestCase
 		$chars = [];
 		$chars[] = $faker->chars('.', 4, 4, 3, 'oOo');
 
-		$this->assertEquals($chars[0], '....oOo....oOo....');
+		$this->assertEquals('....oOo....oOo....', $chars[0]);
 	}
 
 	/**
