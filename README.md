@@ -5,6 +5,11 @@
 [![GitHub issues](https://img.shields.io/github/issues/schalkt/faker.svg?style=flat-square)](https://github.com/schalkt/faker/issues)
 [![Build Status](https://travis-ci.org/schalkt/faker.svg?branch=master)](https://travis-ci.org/schalkt/faker)
 
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=schalkt_faker&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=schalkt_faker)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=schalkt_faker&metric=security_rating)](https://sonarcloud.io/dashboard?id=schalkt_faker)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=schalkt_faker&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=schalkt_faker)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=schalkt_faker&metric=bugs)](https://sonarcloud.io/dashboard?id=schalkt_faker)
+
 - randomly generated words from vowels and consonants
 - customizeble vowels and consonants
   - fake Esperanto (Evevete etet sek edeleme)
