@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Faker Test Suite" tests="8" assertions="23" errors="0" warnings="0" failures="0" skipped="0" time="0.018051">
+    <testsuite name="Schalkt\Faker\Tests\FakerTest" file="/var/www/store_schalk/schalk.hu/www/public/projects/faker/tests/FakerTest.php" tests="8" assertions="23" errors="0" warnings="0" failures="0" skipped="0" time="0.018051">
+      <testcase name="testWords" class="Schalkt\Faker\Tests\FakerTest" classname="Schalkt.Faker.Tests.FakerTest" file="/var/www/store_schalk/schalk.hu/www/public/projects/faker/tests/FakerTest.php" line="16" assertions="5" time="0.013679"/>
+      <testcase name="testNumbers" class="Schalkt\Faker\Tests\FakerTest" classname="Schalkt.Faker.Tests.FakerTest" file="/var/www/store_schalk/schalk.hu/www/public/projects/faker/tests/FakerTest.php" line="65" assertions="3" time="0.000071"/>
+      <testcase name="testOptions" class="Schalkt\Faker\Tests\FakerTest" classname="Schalkt.Faker.Tests.FakerTest" file="/var/www/store_schalk/schalk.hu/www/public/projects/faker/tests/FakerTest.php" line="87" assertions="5" time="0.001958"/>
+      <testcase name="testFunnyNames" class="Schalkt\Faker\Tests\FakerTest" classname="Schalkt.Faker.Tests.FakerTest" file="/var/www/store_schalk/schalk.hu/www/public/projects/faker/tests/FakerTest.php" line="122" assertions="2" time="0.001077"/>
+      <testcase name="testDoubles" class="Schalkt\Faker\Tests\FakerTest" classname="Schalkt.Faker.Tests.FakerTest" file="/var/www/store_schalk/schalk.hu/www/public/projects/faker/tests/FakerTest.php" line="148" assertions="2" time="0.000405"/>
+      <testcase name="testEmails" class="Schalkt\Faker\Tests\FakerTest" classname="Schalkt.Faker.Tests.FakerTest" file="/var/www/store_schalk/schalk.hu/www/public/projects/faker/tests/FakerTest.php" line="173" assertions="4" time="0.000755"/>
+      <testcase name="testChars" class="Schalkt\Faker\Tests\FakerTest" classname="Schalkt.Faker.Tests.FakerTest" file="/var/www/store_schalk/schalk.hu/www/public/projects/faker/tests/FakerTest.php" line="195" assertions="1" time="0.000058"/>
+      <testcase name="testPasswords" class="Schalkt\Faker\Tests\FakerTest" classname="Schalkt.Faker.Tests.FakerTest" file="/var/www/store_schalk/schalk.hu/www/public/projects/faker/tests/FakerTest.php" line="211" assertions="1" time="0.000048"/>
+    </testsuite>
+  </testsuite>
+</testsuites>

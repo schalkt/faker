@@ -37,8 +37,9 @@
             "./vendor/bin/phpunit"
         ],
         "coverage" : [
-            "phpdbg -qrr ./vendor/bin/phpunit --coverage-xml ./coverage/xml",
-            "phpdbg -qrr ./vendor/bin/phpunit --coverage-html ./coverage/html"
+            "phpdbg -qrr ./vendor/bin/phpunit --coverage-xml ./tests/coverage/xml",
+            "phpdbg -qrr ./vendor/bin/phpunit --coverage-html ./tests/coverage/html",
+            "phpdbg -qrr ./vendor/bin/phpunit --log-junit ./tests/report.xml"
         ],
         "demo": [
             "php ./examples/demo.php"
