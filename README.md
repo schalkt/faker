@@ -45,6 +45,7 @@
     $faker->boolean(); // true or false    
     $faker->chars('.', 4, 4, 3, 'oOo'); // ....oOo....oOo....    
     $faker->chars('#', 3, 3, 4, '-'); // ###-###-###-###
+    $faker->chars('124', 1, 5, 4, ' + '); // 2144 + 24444 + 444 + 22141
     $faker->mask('###-###-###-###', 'ABCDEFG'); // AAE-BAF-DDB-AAF
     $faker->mask('##-##-##-##', '01'); // 11-10-01-10
 

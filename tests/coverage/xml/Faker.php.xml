@@ -2,34 +2,33 @@
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
   <file name="Faker.php" path="/">
     <totals>
-      <lines total="398" comments="108" code="290" executable="85" executed="85" percent="100.00"/>
+      <lines total="398" comments="130" code="268" executable="85" executed="85" percent="100.00"/>
       <methods count="19" tested="19" percent="100.00"/>
       <functions count="0" tested="0" percent="0"/>
       <classes count="1" tested="1" percent="100.00"/>
       <traits count="0" tested="0" percent="0"/>
     </totals>
     <class name="Schalkt\Faker\Faker" start="9" executable="85" executed="85" crap="45">
-      <package full="" name="" sub="" category=""/>
       <namespace name="Schalkt\Faker"/>
-      <method name="__construct" signature="__construct(array $options = [])" start="46" end="68" crap="5" executable="11" executed="11" coverage="100"/>
-      <method name="init" signature="init(array $options = [])" start="76" end="79" crap="1" executable="1" executed="1" coverage="100"/>
-      <method name="word" signature="word($length = null, $first = null, $suffixes = [])" start="89" end="109" crap="6" executable="10" executed="10" coverage="100"/>
-      <method name="words" signature="words($count = 4, $glue = ' ', $min = 4, $max = 7, $first = null, $suffixes = [])" start="117" end="127" crap="2" executable="4" executed="4" coverage="100"/>
-      <method name="sentence" signature="sentence($words = null)" start="136" end="141" crap="1" executable="2" executed="2" coverage="100"/>
-      <method name="chars" signature="chars($chars = null, $min = 2, $max = 21, $segments = 1, $glue = '-')" start="154" end="174" crap="4" executable="10" executed="10" coverage="100"/>
-      <method name="text" signature="text($sentences = 5, $min = 4, $max = 7)" start="186" end="196" crap="2" executable="4" executed="4" coverage="100"/>
-      <method name="getRandomConsonant" signature="getRandomConsonant($double = false)" start="206" end="216" crap="2" executable="5" executed="5" coverage="100"/>
-      <method name="getRandomVowel" signature="getRandomVowel($double = false)" start="225" end="235" crap="2" executable="5" executed="5" coverage="100"/>
+      <method name="__construct" signature="__construct(array $options)" start="46" end="68" crap="5" executable="11" executed="11" coverage="100"/>
+      <method name="init" signature="init(array $options)" start="76" end="79" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="word" signature="word($length, $first, $suffixes)" start="89" end="109" crap="6" executable="10" executed="10" coverage="100"/>
+      <method name="words" signature="words($count, $glue, $min, $max, $first, $suffixes)" start="117" end="127" crap="2" executable="4" executed="4" coverage="100"/>
+      <method name="sentence" signature="sentence($words)" start="136" end="141" crap="1" executable="2" executed="2" coverage="100"/>
+      <method name="chars" signature="chars($chars, $min, $max, $segments, $glue)" start="154" end="174" crap="4" executable="10" executed="10" coverage="100"/>
+      <method name="text" signature="text($sentences, $min, $max)" start="186" end="196" crap="2" executable="4" executed="4" coverage="100"/>
+      <method name="getRandomConsonant" signature="getRandomConsonant($double)" start="206" end="216" crap="2" executable="5" executed="5" coverage="100"/>
+      <method name="getRandomVowel" signature="getRandomVowel($double)" start="225" end="235" crap="2" executable="5" executed="5" coverage="100"/>
       <method name="getRandomNextChar" signature="getRandomNextChar($prev)" start="244" end="262" crap="7" executable="11" executed="11" coverage="100"/>
       <method name="isVowel" signature="isVowel($char)" start="270" end="273" crap="2" executable="1" executed="1" coverage="100"/>
-      <method name="firstname" signature="firstname($min = 5, $max = 7, $first = null, $suffixes = [])" start="283" end="288" crap="1" executable="2" executed="2" coverage="100"/>
-      <method name="lastname" signature="lastname($min = 5, $max = 7, $first = null, $suffixes = [])" start="297" end="302" crap="1" executable="2" executed="2" coverage="100"/>
-      <method name="fullname" signature="fullname($lengthFirst = null, $lengthLast = null, $reverse = false)" start="313" end="323" crap="2" executable="6" executed="6" coverage="100"/>
-      <method name="int" signature="int($min = 0, $max = 10000)" start="333" end="336" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="firstname" signature="firstname($min, $max, $first, $suffixes)" start="283" end="288" crap="1" executable="2" executed="2" coverage="100"/>
+      <method name="lastname" signature="lastname($min, $max, $first, $suffixes)" start="297" end="302" crap="1" executable="2" executed="2" coverage="100"/>
+      <method name="fullname" signature="fullname($lengthFirst, $lengthLast, $reverse)" start="313" end="323" crap="2" executable="6" executed="6" coverage="100"/>
+      <method name="int" signature="int($min, $max)" start="333" end="336" crap="1" executable="1" executed="1" coverage="100"/>
       <method name="boolean" signature="boolean()" start="345" end="348" crap="1" executable="1" executed="1" coverage="100"/>
-      <method name="mask" signature="mask($mask = '###-###-###', $input = 'ABCDEFGHJKLMNPRSTUVWXYZ0123456789')" start="358" end="372" crap="3" executable="6" executed="6" coverage="100"/>
+      <method name="mask" signature="mask($mask, $input)" start="358" end="372" crap="3" executable="6" executed="6" coverage="100"/>
       <method name="email" signature="email()" start="380" end="384" crap="1" executable="1" executed="1" coverage="100"/>
-      <method name="password" signature="password($min = 8, $max = 16, $segments = 2, $glue = '-')" start="392" end="397" crap="1" executable="2" executed="2" coverage="100"/>
+      <method name="password" signature="password($min, $max, $segments, $glue)" start="392" end="397" crap="1" executable="2" executed="2" coverage="100"/>
     </class>
     <coverage>
       <line nr="49">
@@ -356,6 +355,7 @@
       </line>
       <line nr="252">
         <covered by="Schalkt\Faker\Tests\FakerTest::testWords"/>
+        <covered by="Schalkt\Faker\Tests\FakerTest::testEmails"/>
       </line>
       <line nr="253">
         <covered by="Schalkt\Faker\Tests\FakerTest::testWords"/>
