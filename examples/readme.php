@@ -18,9 +18,9 @@ $items[] = $faker->sentence(5);
 $items[] = $faker->text(3, 3, 3);
 $items[] = $faker->int(1,1000); // 256 
 $items[] = $faker->boolean(); // true or false
-$items[] = $faker->chars('.', 4, 4, 3, 'oOo'); // ....oOo....oOo....
-$items[] = $faker->chars('#', 3, 3, 4, '-'); // ###-###-###-###
-$items[] = $faker->chars('124', 1, 5, 4, ' + '); // 2144 + 24444 + 444 + 22141
+$items[] = $faker->repeat('.', 4, 4, 3, 'oOo'); // ....oOo....oOo....
+$items[] = $faker->repeat('#', 3, 3, 4, '-'); // ###-###-###-###
+$items[] = $faker->repeat('124', 1, 5, 4, ' + '); // 2144 + 24444 + 444 + 22141
 $items[] = $faker->mask('###-###-###-###', 'ABCDEFG');
 $items[] = $faker->mask('##-##-##-##', '01');
 

@@ -84,7 +84,7 @@ class Faker
      *
      * @param  mixed $length
      * @param  mixed $first
-     * @return void
+     * @return string
      */
     public function word($length = null, $first = null, $suffixes = [])
     {
@@ -112,7 +112,7 @@ class Faker
      * words
      *
      * @param  mixed $count
-     * @return void
+     * @return string
      */
     public function words($count = 4, $glue = ' ', $min = 4, $max = 7, $first = null, $suffixes = [])
     {
@@ -131,7 +131,7 @@ class Faker
      * sentence
      *
      * @param  mixed $words
-     * @return void
+     * @return string
      */
     public function sentence($words = null)
     {
@@ -142,16 +142,16 @@ class Faker
 
 
     /**
-     * chars
+     * repeat
      *
      * @param  mixed $chars
      * @param  mixed $min
      * @param  mixed $max
      * @param  mixed $segments
      * @param  mixed $glue
-     * @return void
+     * @return string
      */
-    public function chars($chars = null, $min = 2, $max = 21, $segments = 1, $glue = '-')
+    public function repeat($chars = null, $min = 2, $max = 21, $segments = 1, $glue = '-')
     {
 
         $parts = [];
@@ -181,7 +181,7 @@ class Faker
      * text
      *
      * @param  int $sentences
-     * @return void
+     * @return string
      */
     public function text($sentences = 5, $min = 4, $max = 7)
     {
@@ -201,7 +201,7 @@ class Faker
      * getRandomConsonant
      *
      * @param  mixed $double
-     * @return void
+     * @return string
      */
     protected function getRandomConsonant($double = false)
     {
@@ -220,7 +220,7 @@ class Faker
      * getRandomVowel
      *
      * @param  mixed $double
-     * @return void
+     * @return string
      */
     protected function getRandomVowel($double = false)
     {
@@ -239,7 +239,7 @@ class Faker
      * getRandomNextChar
      *
      * @param  mixed $prev
-     * @return void
+     * @return string
      */
     protected function getRandomNextChar($prev)
     {
@@ -265,7 +265,7 @@ class Faker
      * isVowel
      *
      * @param  mixed $char
-     * @return void
+     * @return string
      */
     protected function isVowel($char)
     {
@@ -278,7 +278,7 @@ class Faker
      *
      * @param  mixed $length
      * @param  mixed $first
-     * @return void
+     * @return string
      */
     public function firstname($min = 5, $max = 7, $first = null, $suffixes = [])
     {
@@ -292,7 +292,7 @@ class Faker
      *
      * @param  mixed $length
      * @param  mixed $first
-     * @return void
+     * @return string
      */
     public function lastname($min = 5, $max = 7, $first = null, $suffixes = [])
     {
@@ -308,10 +308,13 @@ class Faker
      * @param  mixed $lengthFirst
      * @param  mixed $lengthLast
      * @param  mixed $reverse
-     * @return void
+     * @return string
      */
     public function fullname($lengthFirst = null, $lengthLast = null, $reverse = false)
     {
+
+        $lengthFirst = $lengthFirst ? $lengthFirst : rand(4, 10);
+        $lengthLast = $lengthLast ? $lengthLast : rand(4, 10);
 
         return $reverse ? implode(' ', [
             $this->lastname($lengthLast),
@@ -328,7 +331,7 @@ class Faker
      *
      * @param  mixed $min
      * @param  mixed $max
-     * @return void
+     * @return integer
      */
     public function int($min = 0, $max = 10000)
     {
@@ -340,7 +343,7 @@ class Faker
      *
      * @param  mixed $min
      * @param  mixed $max
-     * @return void
+     * @return boolean
      */
     public function boolean()
     {
@@ -353,7 +356,7 @@ class Faker
      *
      * @param  mixed $mask
      * @param  mixed $input
-     * @return void
+     * @return string
      */
     public function mask($mask = '###-###-###', $input = 'ABCDEFGHJKLMNPRSTUVWXYZ0123456789')
     {
@@ -375,7 +378,7 @@ class Faker
     /**
      * email
      *
-     * @return void
+     * @return string
      */
     public function email()
     {
@@ -387,12 +390,12 @@ class Faker
     /**
      * password
      *
-     * @return void
+     * @return string
      */
     public function password($min = 8, $max = 16, $segments = 2, $glue = '-')
     {
 
         $chars = $this->abcLower . $this->abcUpper . $this->numbers;
-        return $this->chars($chars, $min, $max, $segments, $glue);
+        return $this->repeat($chars, $min, $max, $segments, $glue);
     }
 }

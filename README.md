@@ -1,6 +1,4 @@
-# Simple and easy random faker for PHP
-
-> The project is under development, but this is a working and stable version.
+# Random data generator for PHP
 
 [![GitHub issues](https://img.shields.io/github/issues/schalkt/faker.svg?style=flat-square)](https://github.com/schalkt/faker/issues)
 [![Build Status](https://travis-ci.org/schalkt/faker.svg?branch=main)](https://travis-ci.org/schalkt/faker)
@@ -10,7 +8,7 @@
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=schalkt_faker&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=schalkt_faker)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=schalkt_faker&metric=bugs)](https://sonarcloud.io/dashboard?id=schalkt_faker)
 
-- randomly generated words from vowels and consonants
+- randomly generated characters, words, sentences
 - customizeble vowels and consonants
   - fake Esperanto (Evevete etet sek edeleme)
   - pattern look (DIBI.BOB.BO.DID.IBI.IBID.BID)
@@ -39,13 +37,14 @@
     $faker->password(4, 4, 3, '.'); // W2gg.lsgq.FET0
     $faker->word(5); // focix
     $faker->words(5, ', '); // rabija, yigav, bacera, cunay, okzupu
+    $faker->words(2, ' | ', 4, 4, Faker::FIRST_CONSONANT, ['zy', 'sy']); // dodosy | rivozy
     $faker->sentence(5); // Uxibawoz witowarehep effemerogola buinaxepugo nuxehow.
     $faker->text(3, 3, 3); // Icolivotuse rebotuk sulageye. Xaco najud quq.
-    $faker->int(1,1000); // 256 
+    $faker->int(1, 1000); // 238
     $faker->boolean(); // true or false    
-    $faker->chars('.', 4, 4, 3, 'oOo'); // ....oOo....oOo....    
-    $faker->chars('#', 3, 3, 4, '-'); // ###-###-###-###
-    $faker->chars('124', 1, 5, 4, ' + '); // 2144 + 24444 + 444 + 22141
+    $faker->repeat('.', 4, 4, 3, 'oOo'); // ....oOo....oOo....    
+    $faker->repeat('#', 3, 3, 4, '-'); // ###-###-###-###
+    $faker->repeat('124', 1, 5, 4, ' + '); // 2144 + 24444 + 444 + 22141
     $faker->mask('###-###-###-###', 'ABCDEFG'); // AAE-BAF-DDB-AAF
     $faker->mask('##-##-##-##', '01'); // 11-10-01-10
 

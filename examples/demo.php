@@ -10,7 +10,7 @@ $words = [];
 $words[] = $faker->word(2);
 $words[] = $faker->word(3);
 $words[] = $faker->word(5);
-$words[] = $faker->word(7, Faker::FIRST_VOWEL);
+$words[] = $faker->word(7, 10, Faker::FIRST_VOWEL);
 $words[] = $faker->word(14);
 $words[] = $faker->words(20, ', ');
 $words[] = $faker->sentence(20);
@@ -22,7 +22,7 @@ $firstnames = [];
 $firstnames[] = $faker->firstname();
 $firstnames[] = $faker->firstname(3);
 $firstnames[] = $faker->firstname(5);
-$firstnames[] = $faker->firstname(7, Faker::FIRST_VOWEL);
+$firstnames[] = $faker->firstname(7, 10, Faker::FIRST_VOWEL);
 $firstnames[] = $faker->firstname(14);
 
 print_r($firstnames);
@@ -46,9 +46,9 @@ $codes[] = $faker->mask('##.##.##.##.##.##', 'dilemma');
 print_r($codes);
 
 $chars = [];
-$chars[] = $faker->chars('#', 3, 4, rand(4, 10), '-');
-$chars[] = $faker->chars('.', 4, 4, 7, 'oOo');
-$chars[] = $faker->chars('ACDELMTH23467', 2, 8, rand(4, 6), '-');
+$chars[] = $faker->repeat('#', 3, 4, rand(4, 10), '-');
+$chars[] = $faker->repeat('.', 4, 4, 7, 'oOo');
+$chars[] = $faker->repeat('ACDELMTH23467', 2, 8, rand(4, 6), '-');
 
 print_r($chars);
 
@@ -98,8 +98,8 @@ print_r($words);
 
 
 $faker = Faker::init([
-	'vowels' => 'aeiou',
-	'consonants' => 'bcdfghjklmnprstvz',
+	'vowels' => 'ao',
+	'consonants' => 'klmnpr',
 	'nextChar' => [
 		'sameChar' => 0, // percent between 0-100
 		'sameType' => 0, // percent between 0-100
@@ -108,23 +108,23 @@ $faker = Faker::init([
 ]);
 
 $names = [];
-$names[] = $faker->words(14, ', ', 3, 3, Faker::FIRST_CONSONANT, ['izi', 'isi', 'iti', 'ini']);
+$names[] = $faker->words(10, ' - ', 3, 3, Faker::FIRST_CONSONANT, ['izi', 'isi', 'iti', 'ini']);
 
 print_r($names);
 
 
 $faker = Faker::init([
-	'vowels' => 'aeiou',
-	'consonants' => 'bcdfghjklmnprstvz',
+	'vowels' => 'io',
+	'consonants' => 'bdrstv',
 	'nextChar' => [
 		'sameChar' => 0, // percent between 0-100
-		'sameType' => 40, // percent between 0-100
+		'sameType' => 0, // percent between 0-100
 		'double' => 0 // percent between 0-100
 	],
 ]);
 
 $names = [];
-$names[] = $faker->words(14, ' ', 4, 4, Faker::FIRST_CONSONANT, ['zy', 'sy']);
+$names[] = $faker->words(7, ' | ', 4, 4, Faker::FIRST_CONSONANT, ['zy', 'sy']);
 
 print_r($names);
 
@@ -160,3 +160,6 @@ $words = [];
 $words[] = strtoupper($faker->words(14, '.', 2, 4));
 
 print_r($words);
+
+
+

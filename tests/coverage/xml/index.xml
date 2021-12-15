@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
-  <build time="Tue Dec 14 21:54:18 UTC 2021" phpunit="9.5.10" coverage="9.2.10">
+  <build time="Wed Dec 15 6:53:39 UTC 2021" phpunit="9.5.10" coverage="9.2.10">
     <runtime name="PHPDBG" version="7.4.26" url="https://secure.php.net/"/>
     <driver name="phpdbg" version="7.4.26"/>
   </build>
@@ -12,7 +12,7 @@
       <test name="Schalkt\Faker\Tests\FakerTest::testFunnyNames" size="unknown" result="0" status="PASSED"/>
       <test name="Schalkt\Faker\Tests\FakerTest::testDoubles" size="unknown" result="0" status="PASSED"/>
       <test name="Schalkt\Faker\Tests\FakerTest::testEmails" size="unknown" result="0" status="PASSED"/>
-      <test name="Schalkt\Faker\Tests\FakerTest::testChars" size="unknown" result="0" status="PASSED"/>
+      <test name="Schalkt\Faker\Tests\FakerTest::testRepeats" size="unknown" result="0" status="PASSED"/>
       <test name="Schalkt\Faker\Tests\FakerTest::testPasswords" size="unknown" result="0" status="PASSED"/>
     </tests>
     <directory name="/">

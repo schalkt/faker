@@ -188,17 +188,17 @@ final class FakerTest extends TestCase
 	}
 
 	/**
-	 * testChars
+	 * testRepeats
 	 *
 	 * @return void
 	 */
-	public function testChars()
+	public function testRepeats()
 	{
 
 		$faker = Faker::init();
 
 		$chars = [];
-		$chars[] = $faker->chars('.', 4, 4, 3, 'oOo');
+		$chars[] = $faker->repeat('.', 4, 4, 3, 'oOo');
 
 		$this->assertEquals('....oOo....oOo....', $chars[0]);
 	}

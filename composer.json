@@ -1,7 +1,7 @@
 {
     "name": "schalkt/faker",
     "version": "1.0.0",
-    "description": "Simple random data generator for PHP",
+    "description": "Random data generator for PHP",
     "keywords": [
         "faker",
         "php",
