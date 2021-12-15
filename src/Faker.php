@@ -120,7 +120,7 @@ class Faker
         $words = [];
 
         for ($i = 0; $i < $count; $i++) {
-            $words[] = $this->word(rand($min, $max), $first, $suffixes);
+            $words[] = $this->word(random_int($min, $max), $first, $suffixes);
         }
 
         return implode($glue, $words);
@@ -164,7 +164,7 @@ class Faker
             $length = random_int($min, $max);
 
             for ($i = 0; $i < $length; $i++) {
-                $part .= $chars[rand(0, $count - 1)];
+                $part .= $chars[random_int(0, $count - 1)];
             }
 
             $parts[] = $part;
@@ -189,7 +189,7 @@ class Faker
         $text = [];
 
         for ($i = 0; $i < $sentences - 1; $i++) {
-            $text[] = $this->sentence(rand($min, $max));
+            $text[] = $this->sentence(random_int($min, $max));
         }
 
         return implode(' ', $text);
@@ -283,7 +283,7 @@ class Faker
     public function firstname($min = 5, $max = 7, $first = null, $suffixes = [])
     {
 
-        $firstname = $this->word(rand($min, $max), $first, $suffixes);
+        $firstname = $this->word(random_int($min, $max), $first, $suffixes);
         return ucfirst($firstname);
     }
 
@@ -297,7 +297,7 @@ class Faker
     public function lastname($min = 5, $max = 7, $first = null, $suffixes = [])
     {
 
-        $lastname = $this->word(rand($min, $max), $first, $suffixes);
+        $lastname = $this->word(random_int($min, $max), $first, $suffixes);
         return ucfirst($lastname);
     }
 
