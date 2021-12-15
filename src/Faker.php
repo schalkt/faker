@@ -91,7 +91,7 @@ class Faker
 
         $firsts = [self::FIRST_VOWEL, self::FIRST_CONSONANT];
 
-        $length = $length === null ? rand(3, 10) : $length;
+        $length = $length === null ? random_int(3, 10) : $length;
         $first = $first === null ? $firsts[array_rand($firsts, 1)] : $first;
 
         $char1 = ($first === self::FIRST_CONSONANT) ? $this->getRandomConsonant() : $this->getRandomVowel();
@@ -161,7 +161,7 @@ class Faker
         for ($s = 0; $s < $segments; $s++) {
 
             $part = '';
-            $length = rand($min, $max);
+            $length = random_int($min, $max);
 
             for ($i = 0; $i < $length; $i++) {
                 $part .= $chars[rand(0, $count - 1)];
@@ -207,10 +207,10 @@ class Faker
     {
 
         if ($double) {
-            $position = rand(0, count($this->consonantsDouble) - 1);
+            $position = random_int(0, count($this->consonantsDouble) - 1);
             return $this->consonantsDouble[$position];
         } else {
-            $position = rand(0, $this->consonantsCount - 1);
+            $position = random_int(0, $this->consonantsCount - 1);
             return mb_substr($this->consonants, $position, 1);
         }
     }
@@ -226,10 +226,10 @@ class Faker
     {
 
         if ($double) {
-            $position = rand(0, count($this->vowelsDouble) - 1);
+            $position = random_int(0, count($this->vowelsDouble) - 1);
             return $this->vowelsDouble[$position];
         } else {
-            $position = rand(0, $this->vowelsCount - 1);
+            $position = random_int(0, $this->vowelsCount - 1);
             return mb_substr($this->vowels, $position, 1);
         }
     }
@@ -244,9 +244,9 @@ class Faker
     protected function getRandomNextChar($prev)
     {
 
-        $r1 = rand(1, 100);
-        $r2 = rand(1, 100);
-        $r3 = rand(1, 100);
+        $r1 = random_int(1, 100);
+        $r2 = random_int(1, 100);
+        $r3 = random_int(1, 100);
 
         if ($this->options['nextChar']['sameChar'] > $r1) {
             $char = $prev;
@@ -313,8 +313,8 @@ class Faker
     public function fullname($lengthFirst = null, $lengthLast = null, $reverse = false)
     {
 
-        $lengthFirst = $lengthFirst ? $lengthFirst : rand(4, 10);
-        $lengthLast = $lengthLast ? $lengthLast : rand(4, 10);
+        $lengthFirst = $lengthFirst ? $lengthFirst : random_int(4, 10);
+        $lengthLast = $lengthLast ? $lengthLast : random_int(4, 10);
 
         return $reverse ? implode(' ', [
             $this->lastname($lengthLast),
@@ -335,7 +335,7 @@ class Faker
      */
     public function int($min = 0, $max = 10000)
     {
-        return rand($min, $max);
+        return random_int($min, $max);
     }
 
     /**
@@ -347,7 +347,7 @@ class Faker
      */
     public function boolean()
     {
-        return (bool)rand(0, 1);
+        return (bool)random_int(0, 1);
     }
 
 
@@ -368,7 +368,7 @@ class Faker
 
 
         foreach ($chars as $char) {
-            $output[] = $char === '#' ? $input[rand(0, $max)] : $char;
+            $output[] = $char === '#' ? $input[random_int(0, $max)] : $char;
         }
 
         return implode('', $output);
