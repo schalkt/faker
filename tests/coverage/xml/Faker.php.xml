@@ -2,13 +2,13 @@
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
   <file name="Faker.php" path="/">
     <totals>
-      <lines total="398" comments="130" code="268" executable="85" executed="85" percent="100.00"/>
+      <lines total="406" comments="130" code="276" executable="89" executed="89" percent="100.00"/>
       <methods count="19" tested="19" percent="100.00"/>
       <functions count="0" tested="0" percent="0"/>
       <classes count="1" tested="1" percent="100.00"/>
       <traits count="0" tested="0" percent="0"/>
     </totals>
-    <class name="Schalkt\Faker\Faker" start="9" executable="85" executed="85" crap="45">
+    <class name="Schalkt\Faker\Faker" start="9" executable="89" executed="89" crap="49">
       <namespace name="Schalkt\Faker"/>
       <method name="__construct" signature="__construct(array $options)" start="46" end="68" crap="5" executable="11" executed="11" coverage="100"/>
       <method name="init" signature="init(array $options)" start="76" end="79" crap="1" executable="1" executed="1" coverage="100"/>
@@ -21,14 +21,14 @@
       <method name="getRandomVowel" signature="getRandomVowel($double)" start="225" end="235" crap="2" executable="5" executed="5" coverage="100"/>
       <method name="getRandomNextChar" signature="getRandomNextChar($prev)" start="244" end="262" crap="7" executable="11" executed="11" coverage="100"/>
       <method name="isVowel" signature="isVowel($char)" start="270" end="273" crap="2" executable="1" executed="1" coverage="100"/>
-      <method name="firstname" signature="firstname($min, $max, $first, $suffixes)" start="283" end="288" crap="1" executable="2" executed="2" coverage="100"/>
-      <method name="lastname" signature="lastname($min, $max, $first, $suffixes)" start="297" end="302" crap="1" executable="2" executed="2" coverage="100"/>
-      <method name="fullname" signature="fullname($lengthFirst, $lengthLast, $reverse)" start="313" end="323" crap="2" executable="6" executed="6" coverage="100"/>
-      <method name="int" signature="int($min, $max)" start="333" end="336" crap="1" executable="1" executed="1" coverage="100"/>
-      <method name="boolean" signature="boolean()" start="345" end="348" crap="1" executable="1" executed="1" coverage="100"/>
-      <method name="mask" signature="mask($mask, $input)" start="358" end="372" crap="3" executable="6" executed="6" coverage="100"/>
-      <method name="email" signature="email()" start="380" end="384" crap="1" executable="1" executed="1" coverage="100"/>
-      <method name="password" signature="password($min, $max, $segments, $glue)" start="392" end="397" crap="1" executable="2" executed="2" coverage="100"/>
+      <method name="firstname" signature="firstname($min, $max, $first, $suffixes)" start="283" end="290" crap="2" executable="3" executed="3" coverage="100"/>
+      <method name="lastname" signature="lastname($min, $max, $first, $suffixes)" start="299" end="306" crap="2" executable="3" executed="3" coverage="100"/>
+      <method name="fullname" signature="fullname($lengthFirst, $lengthLast, $reverse)" start="317" end="330" crap="4" executable="8" executed="8" coverage="100"/>
+      <method name="int" signature="int($min, $max)" start="340" end="343" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="boolean" signature="boolean()" start="352" end="355" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="mask" signature="mask($mask, $input)" start="365" end="379" crap="3" executable="6" executed="6" coverage="100"/>
+      <method name="email" signature="email()" start="387" end="391" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="password" signature="password($min, $max, $segments, $glue)" start="399" end="404" crap="1" executable="2" executed="2" coverage="100"/>
     </class>
     <coverage>
       <line nr="49">
@@ -355,6 +355,7 @@
       </line>
       <line nr="252">
         <covered by="Schalkt\Faker\Tests\FakerTest::testWords"/>
+        <covered by="Schalkt\Faker\Tests\FakerTest::testEmails"/>
       </line>
       <line nr="253">
         <covered by="Schalkt\Faker\Tests\FakerTest::testWords"/>
@@ -402,25 +403,19 @@
       <line nr="286">
         <covered by="Schalkt\Faker\Tests\FakerTest::testWords"/>
       </line>
-      <line nr="287">
+      <line nr="288">
         <covered by="Schalkt\Faker\Tests\FakerTest::testWords"/>
       </line>
-      <line nr="300">
+      <line nr="289">
         <covered by="Schalkt\Faker\Tests\FakerTest::testWords"/>
       </line>
-      <line nr="301">
+      <line nr="302">
         <covered by="Schalkt\Faker\Tests\FakerTest::testWords"/>
       </line>
-      <line nr="316">
+      <line nr="304">
         <covered by="Schalkt\Faker\Tests\FakerTest::testWords"/>
       </line>
-      <line nr="317">
-        <covered by="Schalkt\Faker\Tests\FakerTest::testWords"/>
-      </line>
-      <line nr="318">
-        <covered by="Schalkt\Faker\Tests\FakerTest::testWords"/>
-      </line>
-      <line nr="319">
+      <line nr="305">
         <covered by="Schalkt\Faker\Tests\FakerTest::testWords"/>
       </line>
       <line nr="320">
@@ -429,43 +424,61 @@
       <line nr="321">
         <covered by="Schalkt\Faker\Tests\FakerTest::testWords"/>
       </line>
-      <line nr="335">
-        <covered by="Schalkt\Faker\Tests\FakerTest::testNumbers"/>
-      </line>
-      <line nr="347">
-        <covered by="Schalkt\Faker\Tests\FakerTest::testNumbers"/>
-      </line>
-      <line nr="361">
+      <line nr="323">
         <covered by="Schalkt\Faker\Tests\FakerTest::testWords"/>
+      </line>
+      <line nr="324">
+        <covered by="Schalkt\Faker\Tests\FakerTest::testWords"/>
+      </line>
+      <line nr="325">
+        <covered by="Schalkt\Faker\Tests\FakerTest::testWords"/>
+      </line>
+      <line nr="326">
+        <covered by="Schalkt\Faker\Tests\FakerTest::testWords"/>
+      </line>
+      <line nr="327">
+        <covered by="Schalkt\Faker\Tests\FakerTest::testWords"/>
+      </line>
+      <line nr="328">
+        <covered by="Schalkt\Faker\Tests\FakerTest::testWords"/>
+      </line>
+      <line nr="342">
         <covered by="Schalkt\Faker\Tests\FakerTest::testNumbers"/>
       </line>
-      <line nr="362">
-        <covered by="Schalkt\Faker\Tests\FakerTest::testWords"/>
-        <covered by="Schalkt\Faker\Tests\FakerTest::testNumbers"/>
-      </line>
-      <line nr="363">
-        <covered by="Schalkt\Faker\Tests\FakerTest::testWords"/>
-        <covered by="Schalkt\Faker\Tests\FakerTest::testNumbers"/>
-      </line>
-      <line nr="367">
-        <covered by="Schalkt\Faker\Tests\FakerTest::testWords"/>
+      <line nr="354">
         <covered by="Schalkt\Faker\Tests\FakerTest::testNumbers"/>
       </line>
       <line nr="368">
         <covered by="Schalkt\Faker\Tests\FakerTest::testWords"/>
         <covered by="Schalkt\Faker\Tests\FakerTest::testNumbers"/>
       </line>
-      <line nr="371">
+      <line nr="369">
         <covered by="Schalkt\Faker\Tests\FakerTest::testWords"/>
         <covered by="Schalkt\Faker\Tests\FakerTest::testNumbers"/>
       </line>
-      <line nr="383">
+      <line nr="370">
+        <covered by="Schalkt\Faker\Tests\FakerTest::testWords"/>
+        <covered by="Schalkt\Faker\Tests\FakerTest::testNumbers"/>
+      </line>
+      <line nr="374">
+        <covered by="Schalkt\Faker\Tests\FakerTest::testWords"/>
+        <covered by="Schalkt\Faker\Tests\FakerTest::testNumbers"/>
+      </line>
+      <line nr="375">
+        <covered by="Schalkt\Faker\Tests\FakerTest::testWords"/>
+        <covered by="Schalkt\Faker\Tests\FakerTest::testNumbers"/>
+      </line>
+      <line nr="378">
+        <covered by="Schalkt\Faker\Tests\FakerTest::testWords"/>
+        <covered by="Schalkt\Faker\Tests\FakerTest::testNumbers"/>
+      </line>
+      <line nr="390">
         <covered by="Schalkt\Faker\Tests\FakerTest::testEmails"/>
       </line>
-      <line nr="395">
+      <line nr="402">
         <covered by="Schalkt\Faker\Tests\FakerTest::testPasswords"/>
       </line>
-      <line nr="396">
+      <line nr="403">
         <covered by="Schalkt\Faker\Tests\FakerTest::testPasswords"/>
       </line>
     </coverage>
@@ -1174,7 +1187,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_QUESTION_MARK">?</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_STRING">rand</token>
+        <token name="T_STRING">random_int</token>
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_LNUMBER">3</token>
         <token name="T_COMMA">,</token>
@@ -1493,7 +1506,7 @@
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
         <token name="T_STRING">word</token>
         <token name="T_OPEN_BRACKET">(</token>
-        <token name="T_STRING">rand</token>
+        <token name="T_STRING">random_int</token>
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_VARIABLE">$min</token>
         <token name="T_COMMA">,</token>
@@ -1791,7 +1804,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_EQUAL">=</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_STRING">rand</token>
+        <token name="T_STRING">random_int</token>
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_VARIABLE">$min</token>
         <token name="T_COMMA">,</token>
@@ -1834,7 +1847,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_VARIABLE">$chars</token>
         <token name="T_OPEN_SQUARE">[</token>
-        <token name="T_STRING">rand</token>
+        <token name="T_STRING">random_int</token>
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_LNUMBER">0</token>
         <token name="T_COMMA">,</token>
@@ -1996,7 +2009,7 @@
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
         <token name="T_STRING">sentence</token>
         <token name="T_OPEN_BRACKET">(</token>
-        <token name="T_STRING">rand</token>
+        <token name="T_STRING">random_int</token>
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_VARIABLE">$min</token>
         <token name="T_COMMA">,</token>
@@ -2086,7 +2099,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_EQUAL">=</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_STRING">rand</token>
+        <token name="T_STRING">random_int</token>
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_LNUMBER">0</token>
         <token name="T_COMMA">,</token>
@@ -2130,7 +2143,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_EQUAL">=</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_STRING">rand</token>
+        <token name="T_STRING">random_int</token>
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_LNUMBER">0</token>
         <token name="T_COMMA">,</token>
@@ -2228,7 +2241,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_EQUAL">=</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_STRING">rand</token>
+        <token name="T_STRING">random_int</token>
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_LNUMBER">0</token>
         <token name="T_COMMA">,</token>
@@ -2272,7 +2285,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_EQUAL">=</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_STRING">rand</token>
+        <token name="T_STRING">random_int</token>
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_LNUMBER">0</token>
         <token name="T_COMMA">,</token>
@@ -2356,7 +2369,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_EQUAL">=</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_STRING">rand</token>
+        <token name="T_STRING">random_int</token>
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_LNUMBER">1</token>
         <token name="T_COMMA">,</token>
@@ -2371,7 +2384,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_EQUAL">=</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_STRING">rand</token>
+        <token name="T_STRING">random_int</token>
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_LNUMBER">1</token>
         <token name="T_COMMA">,</token>
@@ -2386,7 +2399,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_EQUAL">=</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_STRING">rand</token>
+        <token name="T_STRING">random_int</token>
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_LNUMBER">1</token>
         <token name="T_COMMA">,</token>
@@ -2729,6 +2742,28 @@
       <line no="285"/>
       <line no="286">
         <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$max</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$min</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_GT">&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$max</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_QUESTION_MARK">?</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$min</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$max</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="287"/>
+      <line no="288">
+        <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$firstname</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_EQUAL">=</token>
@@ -2737,7 +2772,7 @@
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
         <token name="T_STRING">word</token>
         <token name="T_OPEN_BRACKET">(</token>
-        <token name="T_STRING">rand</token>
+        <token name="T_STRING">random_int</token>
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_VARIABLE">$min</token>
         <token name="T_COMMA">,</token>
@@ -2753,7 +2788,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="287">
+      <line no="289">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -2763,34 +2798,34 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="288">
+      <line no="290">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="289"/>
-      <line no="290">
+      <line no="291"/>
+      <line no="292">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="291">
+      <line no="293">
         <token name="T_DOC_COMMENT">     * lastname</token>
       </line>
-      <line no="292">
+      <line no="294">
         <token name="T_DOC_COMMENT">     *</token>
       </line>
-      <line no="293">
+      <line no="295">
         <token name="T_DOC_COMMENT">     * @param  mixed $length</token>
       </line>
-      <line no="294">
+      <line no="296">
         <token name="T_DOC_COMMENT">     * @param  mixed $first</token>
       </line>
-      <line no="295">
+      <line no="297">
         <token name="T_DOC_COMMENT">     * @return string</token>
       </line>
-      <line no="296">
+      <line no="298">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="297">
+      <line no="299">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -2827,12 +2862,36 @@
         <token name="T_CLOSE_SQUARE">]</token>
         <token name="T_CLOSE_BRACKET">)</token>
       </line>
-      <line no="298">
+      <line no="300">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="299"/>
-      <line no="300">
+      <line no="301">
+        <token name="T_WHITESPACE">        </token>
+      </line>
+      <line no="302">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$max</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$min</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_GT">&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$max</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_QUESTION_MARK">?</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$min</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$max</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="303"/>
+      <line no="304">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$lastname</token>
         <token name="T_WHITESPACE"> </token>
@@ -2842,7 +2901,7 @@
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
         <token name="T_STRING">word</token>
         <token name="T_OPEN_BRACKET">(</token>
-        <token name="T_STRING">rand</token>
+        <token name="T_STRING">random_int</token>
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_VARIABLE">$min</token>
         <token name="T_COMMA">,</token>
@@ -2858,7 +2917,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="301">
+      <line no="305">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -2868,38 +2927,38 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="302">
+      <line no="306">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="303"/>
-      <line no="304"/>
-      <line no="305">
+      <line no="307"/>
+      <line no="308"/>
+      <line no="309">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="306">
+      <line no="310">
         <token name="T_DOC_COMMENT">     * fullname</token>
       </line>
-      <line no="307">
+      <line no="311">
         <token name="T_DOC_COMMENT">     *</token>
       </line>
-      <line no="308">
+      <line no="312">
         <token name="T_DOC_COMMENT">     * @param  mixed $lengthFirst</token>
       </line>
-      <line no="309">
+      <line no="313">
         <token name="T_DOC_COMMENT">     * @param  mixed $lengthLast</token>
       </line>
-      <line no="310">
+      <line no="314">
         <token name="T_DOC_COMMENT">     * @param  mixed $reverse</token>
       </line>
-      <line no="311">
+      <line no="315">
         <token name="T_DOC_COMMENT">     * @return string</token>
       </line>
-      <line no="312">
+      <line no="316">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="313">
+      <line no="317">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -2928,12 +2987,59 @@
         <token name="T_STRING">false</token>
         <token name="T_CLOSE_BRACKET">)</token>
       </line>
-      <line no="314">
+      <line no="318">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="315"/>
-      <line no="316">
+      <line no="319"/>
+      <line no="320">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$lengthFirst</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$lengthFirst</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_QUESTION_MARK">?</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$lengthFirst</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">random_int</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_LNUMBER">4</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_LNUMBER">10</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="321">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$lengthLast</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$lengthLast</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_QUESTION_MARK">?</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$lengthLast</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">random_int</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_LNUMBER">4</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_LNUMBER">10</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="322"/>
+      <line no="323">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -2948,7 +3054,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_SQUARE">[</token>
       </line>
-      <line no="317">
+      <line no="324">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -2958,7 +3064,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="318">
+      <line no="325">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -2967,7 +3073,7 @@
         <token name="T_VARIABLE">$lengthFirst</token>
         <token name="T_CLOSE_BRACKET">)</token>
       </line>
-      <line no="319">
+      <line no="326">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_SQUARE">]</token>
         <token name="T_CLOSE_BRACKET">)</token>
@@ -2981,7 +3087,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_SQUARE">[</token>
       </line>
-      <line no="320">
+      <line no="327">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -2991,7 +3097,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="321">
+      <line no="328">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -3000,41 +3106,41 @@
         <token name="T_VARIABLE">$lengthLast</token>
         <token name="T_CLOSE_BRACKET">)</token>
       </line>
-      <line no="322">
+      <line no="329">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_SQUARE">]</token>
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="323">
+      <line no="330">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="324"/>
-      <line no="325"/>
-      <line no="326">
+      <line no="331"/>
+      <line no="332"/>
+      <line no="333">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="327">
+      <line no="334">
         <token name="T_DOC_COMMENT">     * int</token>
       </line>
-      <line no="328">
+      <line no="335">
         <token name="T_DOC_COMMENT">     *</token>
       </line>
-      <line no="329">
+      <line no="336">
         <token name="T_DOC_COMMENT">     * @param  mixed $min</token>
       </line>
-      <line no="330">
+      <line no="337">
         <token name="T_DOC_COMMENT">     * @param  mixed $max</token>
       </line>
-      <line no="331">
+      <line no="338">
         <token name="T_DOC_COMMENT">     * @return integer</token>
       </line>
-      <line no="332">
+      <line no="339">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="333">
+      <line no="340">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -3056,15 +3162,15 @@
         <token name="T_LNUMBER">10000</token>
         <token name="T_CLOSE_BRACKET">)</token>
       </line>
-      <line no="334">
+      <line no="341">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="335">
+      <line no="342">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_STRING">rand</token>
+        <token name="T_STRING">random_int</token>
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_VARIABLE">$min</token>
         <token name="T_COMMA">,</token>
@@ -3073,34 +3179,34 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="336">
+      <line no="343">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="337"/>
-      <line no="338">
+      <line no="344"/>
+      <line no="345">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="339">
+      <line no="346">
         <token name="T_DOC_COMMENT">     * boolean</token>
       </line>
-      <line no="340">
+      <line no="347">
         <token name="T_DOC_COMMENT">     *</token>
       </line>
-      <line no="341">
+      <line no="348">
         <token name="T_DOC_COMMENT">     * @param  mixed $min</token>
       </line>
-      <line no="342">
+      <line no="349">
         <token name="T_DOC_COMMENT">     * @param  mixed $max</token>
       </line>
-      <line no="343">
+      <line no="350">
         <token name="T_DOC_COMMENT">     * @return boolean</token>
       </line>
-      <line no="344">
+      <line no="351">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="345">
+      <line no="352">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -3110,16 +3216,16 @@
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_CLOSE_BRACKET">)</token>
       </line>
-      <line no="346">
+      <line no="353">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="347">
+      <line no="354">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_BOOL_CAST">(bool)</token>
-        <token name="T_STRING">rand</token>
+        <token name="T_STRING">random_int</token>
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_LNUMBER">0</token>
         <token name="T_COMMA">,</token>
@@ -3128,35 +3234,35 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="348">
+      <line no="355">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="349"/>
-      <line no="350"/>
-      <line no="351">
+      <line no="356"/>
+      <line no="357"/>
+      <line no="358">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="352">
+      <line no="359">
         <token name="T_DOC_COMMENT">     * mask</token>
       </line>
-      <line no="353">
+      <line no="360">
         <token name="T_DOC_COMMENT">     *</token>
       </line>
-      <line no="354">
+      <line no="361">
         <token name="T_DOC_COMMENT">     * @param  mixed $mask</token>
       </line>
-      <line no="355">
+      <line no="362">
         <token name="T_DOC_COMMENT">     * @param  mixed $input</token>
       </line>
-      <line no="356">
+      <line no="363">
         <token name="T_DOC_COMMENT">     * @return string</token>
       </line>
-      <line no="357">
+      <line no="364">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="358">
+      <line no="365">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -3178,12 +3284,12 @@
         <token name="T_CONSTANT_ENCAPSED_STRING">'ABCDEFGHJKLMNPRSTUVWXYZ0123456789'</token>
         <token name="T_CLOSE_BRACKET">)</token>
       </line>
-      <line no="359">
+      <line no="366">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="360"/>
-      <line no="361">
+      <line no="367"/>
+      <line no="368">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$max</token>
         <token name="T_WHITESPACE"> </token>
@@ -3199,7 +3305,7 @@
         <token name="T_LNUMBER">1</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="362">
+      <line no="369">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$chars</token>
         <token name="T_WHITESPACE"> </token>
@@ -3211,7 +3317,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="363">
+      <line no="370">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$output</token>
         <token name="T_WHITESPACE"> </token>
@@ -3221,10 +3327,10 @@
         <token name="T_CLOSE_SQUARE">]</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="364"/>
-      <line no="365"/>
-      <line no="366"/>
-      <line no="367">
+      <line no="371"/>
+      <line no="372"/>
+      <line no="373"/>
+      <line no="374">
         <token name="T_WHITESPACE">        </token>
         <token name="T_FOREACH">foreach</token>
         <token name="T_WHITESPACE"> </token>
@@ -3238,7 +3344,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="368">
+      <line no="375">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$output</token>
         <token name="T_OPEN_SQUARE">[</token>
@@ -3256,7 +3362,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_VARIABLE">$input</token>
         <token name="T_OPEN_SQUARE">[</token>
-        <token name="T_STRING">rand</token>
+        <token name="T_STRING">random_int</token>
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_LNUMBER">0</token>
         <token name="T_COMMA">,</token>
@@ -3270,12 +3376,12 @@
         <token name="T_VARIABLE">$char</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="369">
+      <line no="376">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="370"/>
-      <line no="371">
+      <line no="377"/>
+      <line no="378">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -3288,29 +3394,29 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="372">
+      <line no="379">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="373"/>
-      <line no="374"/>
-      <line no="375">
+      <line no="380"/>
+      <line no="381"/>
+      <line no="382">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="376">
+      <line no="383">
         <token name="T_DOC_COMMENT">     * email</token>
       </line>
-      <line no="377">
+      <line no="384">
         <token name="T_DOC_COMMENT">     *</token>
       </line>
-      <line no="378">
+      <line no="385">
         <token name="T_DOC_COMMENT">     * @return string</token>
       </line>
-      <line no="379">
+      <line no="386">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="380">
+      <line no="387">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -3320,12 +3426,12 @@
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_CLOSE_BRACKET">)</token>
       </line>
-      <line no="381">
+      <line no="388">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="382"/>
-      <line no="383">
+      <line no="389"/>
+      <line no="390">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -3383,29 +3489,29 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="384">
+      <line no="391">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="385"/>
-      <line no="386"/>
-      <line no="387">
+      <line no="392"/>
+      <line no="393"/>
+      <line no="394">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="388">
+      <line no="395">
         <token name="T_DOC_COMMENT">     * password</token>
       </line>
-      <line no="389">
+      <line no="396">
         <token name="T_DOC_COMMENT">     *</token>
       </line>
-      <line no="390">
+      <line no="397">
         <token name="T_DOC_COMMENT">     * @return string</token>
       </line>
-      <line no="391">
+      <line no="398">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="392">
+      <line no="399">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -3441,12 +3547,12 @@
         <token name="T_CONSTANT_ENCAPSED_STRING">'-'</token>
         <token name="T_CLOSE_BRACKET">)</token>
       </line>
-      <line no="393">
+      <line no="400">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="394"/>
-      <line no="395">
+      <line no="401"/>
+      <line no="402">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$chars</token>
         <token name="T_WHITESPACE"> </token>
@@ -3469,7 +3575,7 @@
         <token name="T_STRING">numbers</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="396">
+      <line no="403">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -3493,14 +3599,14 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="397">
+      <line no="404">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="398">
+      <line no="405">
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="399"/>
+      <line no="406"/>
     </source>
   </file>
 </phpunit>

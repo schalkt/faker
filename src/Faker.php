@@ -283,6 +283,8 @@ class Faker
     public function firstname($min = 5, $max = 7, $first = null, $suffixes = [])
     {
 
+        $max = $min > $max ? $min : $max;
+
         $firstname = $this->word(random_int($min, $max), $first, $suffixes);
         return ucfirst($firstname);
     }
@@ -296,6 +298,8 @@ class Faker
      */
     public function lastname($min = 5, $max = 7, $first = null, $suffixes = [])
     {
+        
+        $max = $min > $max ? $min : $max;
 
         $lastname = $this->word(random_int($min, $max), $first, $suffixes);
         return ucfirst($lastname);

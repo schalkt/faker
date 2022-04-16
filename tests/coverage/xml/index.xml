@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
-  <build time="Wed Dec 15 6:53:39 UTC 2021" phpunit="9.5.10" coverage="9.2.10">
-    <runtime name="PHPDBG" version="7.4.26" url="https://secure.php.net/"/>
-    <driver name="phpdbg" version="7.4.26"/>
+  <build time="Sat Apr 16 18:23:58 UTC 2022" phpunit="9.5.20" coverage="9.2.15">
+    <runtime name="PHPDBG" version="7.4.28" url="https://secure.php.net/"/>
+    <driver name="phpdbg" version="7.4.28"/>
   </build>
   <project source="/var/www/store_schalk/schalk.hu/www/public/projects/faker/src">
     <tests>
@@ -17,7 +17,7 @@
     </tests>
     <directory name="/">
       <totals>
-        <lines total="398" comments="130" code="268" executable="85" executed="85" percent="100.00"/>
+        <lines total="406" comments="130" code="276" executable="89" executed="89" percent="100.00"/>
         <methods count="19" tested="19" percent="100.00"/>
         <functions count="0" tested="0" percent="0"/>
         <classes count="1" tested="1" percent="100.00"/>
@@ -25,7 +25,7 @@
       </totals>
       <file name="Faker.php" href="Faker.php.xml">
         <totals>
-          <lines total="398" comments="130" code="268" executable="85" executed="85" percent="100.00"/>
+          <lines total="406" comments="130" code="276" executable="89" executed="89" percent="100.00"/>
           <methods count="19" tested="19" percent="100.00"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="1" tested="1" percent="100.00"/>
