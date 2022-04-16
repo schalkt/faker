@@ -218,4 +218,36 @@ final class FakerTest extends TestCase
 
 		$this->assertEquals(14, strlen($passwords[0]));
 	}
+
+	/**
+	 * testPicks
+	 *
+	 * @return void
+	 */
+	public function testPicks()
+	{
+
+		$faker = Faker::init();
+
+		$items = [
+			'php',
+			'javascript',
+			'typescript',
+			'css',
+			'html',
+			'mongodb',
+			'mysql',
+			'redis',
+			'docker'
+		];
+
+		$tags = [];
+		$tags[] = $faker->pick($items);
+		$tags[] = $faker->pick($items, 2);
+		$tags[] = $faker->pick($items, 3, ', ');
+
+		$this->assertSame(true, is_string($tags[0]));
+		$this->assertSame(true, is_array($tags[1]));
+		$this->assertSame(true, is_string($tags[2]));
+	}
 }

@@ -402,4 +402,39 @@ class Faker
         $chars = $this->abcLower . $this->abcUpper . $this->numbers;
         return $this->repeat($chars, $min, $max, $segments, $glue);
     }
+
+
+    /**
+     * pick
+     *
+     * @param mixed $items 
+     * @param int $howmuch 
+     * @param mixed $implode 
+     * @return void
+     */
+    public function pick($items, $howmuch = 1, $implode = null) {
+
+        $selected = [];
+        $keys = array_keys($items);    
+        $howmuch = $howmuch > count($keys) ? count($keys) : $howmuch;
+
+        shuffle($keys);
+    
+        for($i = 0; $i < $howmuch; $i++) {
+            $selected[] = $items[$keys[$i]];
+        }
+
+        if ($implode) {
+            return implode($implode, $selected);
+        }
+
+        if ($howmuch === 1) {
+            return $selected[0];
+        }
+
+        return $selected;
+
+    }
+
+
 }

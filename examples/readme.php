@@ -21,8 +21,9 @@ $items[] = $faker->boolean(); // true or false
 $items[] = $faker->repeat('.', 4, 4, 3, 'oOo'); // ....oOo....oOo....
 $items[] = $faker->repeat('#', 3, 3, 4, '-'); // ###-###-###-###
 $items[] = $faker->repeat('124', 1, 5, 4, ' + '); // 2144 + 24444 + 444 + 22141
-$items[] = $faker->mask('###-###-###-###', 'ABCDEFG');
-$items[] = $faker->mask('##-##-##-##', '01');
+$items[] = $faker->mask('###-###-###-###', 'ABCDEFG'); // BAD-CGB-GGC-BAG
+$items[] = $faker->mask('##-##-##-##', '01'); // 01-00-00-11
+$items[] = $faker->pick(['CEO', 'CTO', 'Founder', 'Director'], 3, ', '); // Director, CEO, CTO
 
 $faker = Faker::init([
 	'vowels' => 'e',

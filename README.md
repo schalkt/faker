@@ -47,6 +47,7 @@
     $faker->repeat('124', 1, 5, 4, ' + '); // 2144 + 24444 + 444 + 22141
     $faker->mask('###-###-###-###', 'ABCDEFG'); // AAE-BAF-DDB-AAF
     $faker->mask('##-##-##-##', '01'); // 11-10-01-10
+    $faker->pick(['CEO', 'CTO', 'Founder', 'Director'], 3, ', '); // Director, CEO, CTO
 
 ```
 
