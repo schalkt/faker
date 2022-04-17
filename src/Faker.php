@@ -298,7 +298,7 @@ class Faker
      */
     public function lastname($min = 5, $max = 7, $first = null, $suffixes = [])
     {
-        
+
         $max = $min > $max ? $min : $max;
 
         $lastname = $this->word(random_int($min, $max), $first, $suffixes);
@@ -342,6 +342,22 @@ class Faker
         return random_int($min, $max);
     }
 
+
+    /**
+     * float
+     *
+     * @param int $precision 
+     * @return void
+     */
+    public function float($min = 0, $max = 10000, $precision = 2)
+    {
+
+        $randomfloat = $min + mt_rand() / mt_getrandmax() * ($max - $min);
+
+        return round($randomfloat, $precision);
+    }
+
+
     /**
      * boolean
      *
@@ -351,7 +367,7 @@ class Faker
      */
     public function boolean()
     {
-        return (bool)random_int(0, 1);
+        return (boolean)random_int(0, 1);
     }
 
 
@@ -412,15 +428,16 @@ class Faker
      * @param mixed $implode 
      * @return void
      */
-    public function pick($items, $howmuch = 1, $implode = null) {
+    public function pick($items, $howmuch = 1, $implode = null)
+    {
 
         $selected = [];
-        $keys = array_keys($items);    
+        $keys = array_keys($items);
         $howmuch = $howmuch > count($keys) ? count($keys) : $howmuch;
 
         shuffle($keys);
-    
-        for($i = 0; $i < $howmuch; $i++) {
+
+        for ($i = 0; $i < $howmuch; $i++) {
             $selected[] = $items[$keys[$i]];
         }
 
@@ -433,8 +450,23 @@ class Faker
         }
 
         return $selected;
-
     }
 
 
+    /**
+     * date
+     *
+     * @param string $min 
+     * @param mixed $max 
+     * @param string $format 
+     * @return void
+     */
+    public function date($min = '1950-01-01', $max = null, $format = 'Y-m-d')
+    {
+
+        $max = $max === null ? date('Y-m-d', time() - 86400 * 365 * 14) : $max;
+
+        $timestamp = random_int(strtotime($min), strtotime($max));
+        return date($format, $timestamp);
+    }
 }

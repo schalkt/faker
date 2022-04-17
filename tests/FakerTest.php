@@ -71,11 +71,16 @@ final class FakerTest extends TestCase
 		$numbers[] = $faker->int(1);
 		$numbers[] = $faker->int(1000000, 9000000);
 		$numbers[] = $faker->mask('###-###-###-#-#-#', '01');
-		$numbers[] = $faker->boolean() ? 'true' : 'false';
+		$numbers[] = $faker->boolean();
+		$numbers[] = $faker->float(0, 1);
+		$numbers[] = $faker->float(100, 200, 4);
 
 		$this->assertEquals(true, $numbers[0] > 0);
 		$this->assertEquals(true, $numbers[1] >= 1000000);
 		$this->assertEquals(true, strlen($numbers[2]) === 17);
+		$this->assertEquals(true, \is_bool($numbers[3]));
+		$this->assertEquals(true, $numbers[4] > 0 && $numbers[4] < 1);
+		$this->assertEquals(true, $numbers[5] > 100 && $numbers[5] < 200);
 	}
 
 
@@ -249,5 +254,26 @@ final class FakerTest extends TestCase
 		$this->assertSame(true, is_string($tags[0]));
 		$this->assertSame(true, is_array($tags[1]));
 		$this->assertSame(true, is_string($tags[2]));
+	}
+
+	/**
+	 * testDates
+	 *
+	 * @return void
+	 */
+	public function testDates()
+	{
+
+
+		$faker = Faker::init();
+
+		$dates = [];
+		$dates[] = $faker->date();
+		$dates[] = $faker->date('1999-12-01', '1999-12-31');
+		$dates[] = $faker->date('2200-04-01', '2200-04-01', 'Y-m-d H:i:s');
+
+		$this->assertSame(10, strlen($dates[0]));
+		$this->assertSame('1999-12', \substr($dates[1], 0, 7));
+		$this->assertSame('2200-04-01 00:00:00', $dates[2]);
 	}
 }

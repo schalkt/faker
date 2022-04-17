@@ -17,6 +17,7 @@ $items[] = $faker->words(5, ', ');
 $items[] = $faker->sentence(5);
 $items[] = $faker->text(3, 3, 3);
 $items[] = $faker->int(1,1000); // 256 
+$items[] = $faker->float(100, 200, 4); // 106.3748
 $items[] = $faker->boolean(); // true or false
 $items[] = $faker->repeat('.', 4, 4, 3, 'oOo'); // ....oOo....oOo....
 $items[] = $faker->repeat('#', 3, 3, 4, '-'); // ###-###-###-###
@@ -24,6 +25,7 @@ $items[] = $faker->repeat('124', 1, 5, 4, ' + '); // 2144 + 24444 + 444 + 22141
 $items[] = $faker->mask('###-###-###-###', 'ABCDEFG'); // BAD-CGB-GGC-BAG
 $items[] = $faker->mask('##-##-##-##', '01'); // 01-00-00-11
 $items[] = $faker->pick(['CEO', 'CTO', 'Founder', 'Director'], 3, ', '); // Director, CEO, CTO
+$items[] = $faker->date('1970-01-01', '2010-12-31', 'Y-m'); // 2001-02
 
 $faker = Faker::init([
 	'vowels' => 'e',

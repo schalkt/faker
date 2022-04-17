@@ -41,6 +41,7 @@
     $faker->sentence(5); // Uxibawoz witowarehep effemerogola buinaxepugo nuxehow.
     $faker->text(3, 3, 3); // Icolivotuse rebotuk sulageye. Xaco najud quq.
     $faker->int(1, 1000); // 238
+    $faker->float(100, 200, 4); // 175.3874
     $faker->boolean(); // true or false    
     $faker->repeat('.', 4, 4, 3, 'oOo'); // ....oOo....oOo....    
     $faker->repeat('#', 3, 3, 4, '-'); // ###-###-###-###
@@ -48,6 +49,7 @@
     $faker->mask('###-###-###-###', 'ABCDEFG'); // AAE-BAF-DDB-AAF
     $faker->mask('##-##-##-##', '01'); // 11-10-01-10
     $faker->pick(['CEO', 'CTO', 'Founder', 'Director'], 3, ', '); // Director, CEO, CTO
+    $faker->date('1970-01-01', '2010-12-31', 'Y-m'); // 2001-02
 
 ```
 
@@ -77,5 +79,4 @@
 
 - $faker->fill($user)
 - $faker->array($count, $items)
-- $faker->date($format, $max, $min)
-- $faker->float($decimals, $min, $max)
+
