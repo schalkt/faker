@@ -2,7 +2,7 @@
 
 use Schalkt\Faker\Faker;
 
-require dirname(__DIR__) . '/vendor/autoload.php';
+require_once dirname(__DIR__) . '/vendor/autoload.php';
 
 $faker = Faker::init();
 
