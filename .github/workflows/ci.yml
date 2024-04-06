@@ -17,6 +17,6 @@ jobs:
         with:
           php_version: "8.2"
           php_extensions: "xdebug"
-          coverage_clover: "./tests/coverage/result.txt"
+          args: --coverage-text
         env:
           XDEBUG_MODE: coverage
