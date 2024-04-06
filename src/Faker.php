@@ -41,7 +41,7 @@ class Faker
      * __construct
      *
      * @param  array $options
-     * 
+     *
      * @return Faker
      */
     public function __construct(array $options = [])
@@ -72,7 +72,7 @@ class Faker
      * init
      *
      * @param  array $options
-     * 
+     *
      * @return Faker
      */
     public static function init(array $options = [])
@@ -86,7 +86,7 @@ class Faker
      *
      * @param  mixed $length
      * @param  mixed $first
-     * 
+     *
      * @return string
      */
     public function word($length = null, $first = null, $suffixes = [])
@@ -115,7 +115,7 @@ class Faker
      * words
      *
      * @param  mixed $count
-     * 
+     *
      * @return string
      */
     public function words($count = 4, $glue = ' ', $min = 4, $max = 7, $first = null, $suffixes = [])
@@ -135,7 +135,7 @@ class Faker
      * sentence
      *
      * @param  mixed $words
-     * 
+     *
      * @return string
      */
     public function sentence($words = null)
@@ -154,7 +154,7 @@ class Faker
      * @param  mixed $max
      * @param  mixed $segments
      * @param  mixed $glue
-     * 
+     *
      * @return string
      */
     public function repeat($chars = null, $min = 2, $max = 21, $segments = 1, $glue = '-')
@@ -187,7 +187,7 @@ class Faker
      * text
      *
      * @param  int $sentences
-     * 
+     *
      * @return string
      */
     public function text($sentences = 5, $min = 4, $max = 7)
@@ -208,7 +208,7 @@ class Faker
      * getRandomConsonant
      *
      * @param  mixed $double
-     * 
+     *
      * @return string
      */
     protected function getRandomConsonant($double = false)
@@ -228,7 +228,7 @@ class Faker
      * getRandomVowel
      *
      * @param  mixed $double
-     * 
+     *
      * @return string
      */
     protected function getRandomVowel($double = false)
@@ -248,7 +248,7 @@ class Faker
      * getRandomNextChar
      *
      * @param  mixed $prev
-     * 
+     *
      * @return string
      */
     protected function getRandomNextChar($prev)
@@ -275,7 +275,7 @@ class Faker
      * isVowel
      *
      * @param  mixed $char
-     * 
+     *
      * @return string
      */
     protected function isVowel($char)
@@ -289,7 +289,7 @@ class Faker
      *
      * @param  mixed $length
      * @param  mixed $first
-     * 
+     *
      * @return string
      */
     public function firstname($min = 5, $max = 7, $first = null, $suffixes = [])
@@ -306,7 +306,7 @@ class Faker
      *
      * @param  mixed $length
      * @param  mixed $first
-     * 
+     *
      * @return string
      */
     public function lastname($min = 5, $max = 7, $first = null, $suffixes = [])
@@ -325,7 +325,7 @@ class Faker
      * @param  mixed $lengthFirst
      * @param  mixed $lengthLast
      * @param  mixed $reverse
-     * 
+     *
      * @return string
      */
     public function fullname($lengthFirst = null, $lengthLast = null, $reverse = false)
@@ -349,7 +349,7 @@ class Faker
      *
      * @param  mixed $min
      * @param  mixed $max
-     * 
+     *
      * @return integer
      */
     public function int($min = 0, $max = 10000)
@@ -361,8 +361,8 @@ class Faker
     /**
      * float
      *
-     * @param int $precision 
-     * 
+     * @param int $precision
+     *
      * @return float
      */
     public function float($min = 0, $max = 10000, $precision = 2)
@@ -379,7 +379,7 @@ class Faker
      *
      * @param  mixed $min
      * @param  mixed $max
-     * 
+     *
      * @return boolean
      */
     public function boolean()
@@ -393,7 +393,7 @@ class Faker
      *
      * @param  mixed $mask
      * @param  mixed $input
-     * 
+     *
      * @return string
      */
     public function mask($mask = '###-###-###', $input = 'ABCDEFGHJKLMNPRSTUVWXYZ0123456789')
@@ -441,10 +441,10 @@ class Faker
     /**
      * pick
      *
-     * @param mixed $items 
-     * @param int $howmuch 
-     * @param mixed $implode 
-     * 
+     * @param mixed $items
+     * @param int $howmuch
+     * @param mixed $implode
+     *
      * @return array
      */
     public function pick($items, $howmuch = 1, $implode = null)
@@ -475,10 +475,10 @@ class Faker
     /**
      * date
      *
-     * @param string $min 
-     * @param mixed $max 
-     * @param string $format 
-     * 
+     * @param string $min
+     * @param mixed $max
+     * @param string $format
+     *
      * @return string
      */
     public function date($min = null, $max = null, $format = 'Y-m-d')
