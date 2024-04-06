@@ -16,12 +16,9 @@
 
 ## Install
 
-- SOON (`composer require schalkt\faker`)
+- `composer require schalkt/faker`
 
 ## Examples
-
-- `composer run demo`
-- `php ./examples/demo.php`
 
 ```php
 
@@ -75,9 +72,3 @@
     $faker->text(20, 3, 10); // Sedev emeze evekem ez denebebekepep...
 
 ```
-
-## Todo
-
-- $faker->fill($user)
-- $faker->array($count, $items)
-
