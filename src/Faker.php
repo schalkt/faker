@@ -260,9 +260,9 @@ class Faker
 
         if ($this->options['nextChar']['sameChar'] > $r1) {
             $char = $prev;
-        } else if ($this->options['nextChar']['sameType'] > $r2) {
+        } elseif ($this->options['nextChar']['sameType'] > $r2) {
             $char = $this->isVowel($prev) ? $this->getRandomVowel() : $this->getRandomConsonant();
-        } else if ($this->options['nextChar']['double'] > $r3) {
+        } elseif ($this->options['nextChar']['double'] > $r3) {
             $char = $this->isVowel($prev) ? $this->getRandomVowel(true) : $this->getRandomConsonant(true);
         } else {
             $char = $this->isVowel($prev) ? $this->getRandomConsonant() : $this->getRandomVowel();
