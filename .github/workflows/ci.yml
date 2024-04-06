@@ -18,5 +18,6 @@ jobs:
           php_version: "8.2"
           php_extensions: "xdebug"
           args: --coverage-text
+          test_suffix: Test.php
         env:
           XDEBUG_MODE: coverage
