@@ -10,7 +10,7 @@
   </testsuites>
   <source>
     <include>
-      <directory suffix=".php">./src</directory>
+      <file>./src/Faker.php</file>
     </include>
   </source>
 </phpunit>
