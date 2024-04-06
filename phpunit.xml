@@ -13,4 +13,10 @@
       <file>./src/Faker.php</file>
     </include>
   </source>
+  <coverage>
+    <report>
+      <html outputDirectory="./tests/coverage" />
+      <text outputFile="./tests/coverage/result.txt" />
+    </report>
+  </coverage>
 </phpunit>
