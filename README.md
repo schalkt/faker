@@ -1,7 +1,7 @@
 # Random data generator for PHP
 
 [![GitHub issues](https://img.shields.io/github/issues/schalkt/faker.svg?style=flat-square)](https://github.com/schalkt/faker/issues)
-[![Build Status](https://travis-ci.org/schalkt/faker.svg?branch=main)](https://travis-ci.org/schalkt/faker)
+[![Test](https://github.com/schalkt/faker/actions/workflows/ci.yml/badge.svg)](https://github.com/schalkt/faker/actions/workflows/ci.yml)
 
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=schalkt_faker&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=schalkt_faker)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=schalkt_faker&metric=security_rating)](https://sonarcloud.io/dashboard?id=schalkt_faker)
@@ -49,7 +49,8 @@
     $faker->mask('###-###-###-###', 'ABCDEFG'); // AAE-BAF-DDB-AAF
     $faker->mask('##-##-##-##', '01'); // 11-10-01-10
     $faker->pick(['CEO', 'CTO', 'Founder', 'Director'], 3, ', '); // Director, CEO, CTO
-    $faker->date('1970-01-01', '2010-12-31', 'Y-m'); // 2001-02
+    $faker->date(); // 2001-07-21
+    $faker->date('2024-01-01', '2024-12-31', 'Y.m.'); // 2024.02.
 
 ```
 
@@ -71,7 +72,7 @@
       ],
     ]);
 
-    $items[] = $faker->sentence(5); // Sedev emeze evekem ez denebebekepep.
+    $faker->sentence(5); // Sedev emeze evekem ez denebebekepep.
 
 ```
 

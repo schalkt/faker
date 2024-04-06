@@ -188,7 +188,7 @@ class Faker
 
         $text = [];
 
-        for ($i = 0; $i < $sentences - 1; $i++) {
+        for ($i = 0; $i < $sentences; $i++) {
             $text[] = $this->sentence(random_int($min, $max));
         }
 
@@ -367,7 +367,7 @@ class Faker
      */
     public function boolean()
     {
-        return (boolean)random_int(0, 1);
+        return (bool)random_int(0, 1);
     }
 
 
@@ -461,10 +461,11 @@ class Faker
      * @param string $format 
      * @return void
      */
-    public function date($min = '1950-01-01', $max = null, $format = 'Y-m-d')
+    public function date($min = null, $max = null, $format = 'Y-m-d')
     {
 
-        $max = $max === null ? date('Y-m-d', time() - 86400 * 365 * 14) : $max;
+        $min = $min === null ? date('Y-m-d', time() - 86400 * 365 * 16) : $min;
+        $max = $max === null ? date('Y-m-d', time()) : $max;
 
         $timestamp = random_int(strtotime($min), strtotime($max));
         return date($format, $timestamp);
