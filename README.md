@@ -1,5 +1,8 @@
 # Random data generator for PHP
 
+[![Latest Stable Version](https://poser.pugx.org/schalkt/faker/v)](//packagist.org/packages/schalkt/faker)
+[![Total Downloads](https://poser.pugx.org/schalkt/faker/downloads)](//packagist.org/packages/schalkt/faker)
+[![License](https://poser.pugx.org/schalkt/faker/license)](//packagist.org/packages/schalkt/faker)
 [![GitHub issues](https://img.shields.io/github/issues/schalkt/faker.svg?style=flat-square)](https://github.com/schalkt/faker/issues)
 [![Test](https://github.com/schalkt/faker/actions/workflows/ci.yml/badge.svg)](https://github.com/schalkt/faker/actions/workflows/ci.yml)
 
