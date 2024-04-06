@@ -72,7 +72,7 @@
       ],
     ]);
 
-    $faker->sentence(5); // Sedev emeze evekem ez denebebekepep.
+    $faker->text(20, 3, 10); // Sedev emeze evekem ez denebebekepep...
 
 ```
 
