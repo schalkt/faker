@@ -76,13 +76,13 @@ $numbers[] = $faker->boolean() ? 'true' : 'false';
 print_r($numbers);
 
 $faker = Faker::init([
-	'vowels' => 'iea',
-	'consonants' => 'dlm',
-	'nextChar' => [
-		'sameChar' => 0, // percent between 0-100
-		'sameType' => 0, // percent between 0-100
-		'double' => 50, // percent between 0-100
-	]
+    'vowels' => 'iea',
+    'consonants' => 'dlm',
+    'nextChar' => [
+        'sameChar' => 0, // percent between 0-100
+        'sameType' => 0, // percent between 0-100
+        'double' => 50, // percent between 0-100
+    ]
 ]);
 
 $words = [];
@@ -98,13 +98,13 @@ print_r($words);
 
 
 $faker = Faker::init([
-	'vowels' => 'ao',
-	'consonants' => 'klmnpr',
-	'nextChar' => [
-		'sameChar' => 0, // percent between 0-100
-		'sameType' => 0, // percent between 0-100
-		'double' => 0 // percent between 0-100
-	],
+    'vowels' => 'ao',
+    'consonants' => 'klmnpr',
+    'nextChar' => [
+        'sameChar' => 0, // percent between 0-100
+        'sameType' => 0, // percent between 0-100
+        'double' => 0 // percent between 0-100
+    ],
 ]);
 
 $names = [];
@@ -114,13 +114,13 @@ print_r($names);
 
 
 $faker = Faker::init([
-	'vowels' => 'io',
-	'consonants' => 'bdrstv',
-	'nextChar' => [
-		'sameChar' => 0, // percent between 0-100
-		'sameType' => 0, // percent between 0-100
-		'double' => 0 // percent between 0-100
-	],
+    'vowels' => 'io',
+    'consonants' => 'bdrstv',
+    'nextChar' => [
+        'sameChar' => 0, // percent between 0-100
+        'sameType' => 0, // percent between 0-100
+        'double' => 0 // percent between 0-100
+    ],
 ]);
 
 $names = [];
@@ -130,13 +130,13 @@ print_r($names);
 
 
 $faker = Faker::init([
-	'vowels' => 'e',
-	'consonants' => 'bhdlmnkpstvz',
-	'nextChar' => [
-		'sameChar' => 0, // percent between 0-100
-		'sameType' => 0, // percent between 0-100
-		'double' => 0 // percent between 0-100
-	],
+    'vowels' => 'e',
+    'consonants' => 'bhdlmnkpstvz',
+    'nextChar' => [
+        'sameChar' => 0, // percent between 0-100
+        'sameType' => 0, // percent between 0-100
+        'double' => 0 // percent between 0-100
+    ],
 ]);
 
 $sentence = [];
@@ -147,19 +147,16 @@ print_r($sentence);
 
 
 $faker = Faker::init([
-	'vowels' => 'io',
-	'consonants' => 'bd',
-	'nextChar' => [
-		'sameChar' => 0, // percent between 0-100
-		'sameType' => 0, // percent between 0-100
-		'double' => 0 // percent between 0-100
-	],
+    'vowels' => 'io',
+    'consonants' => 'bd',
+    'nextChar' => [
+        'sameChar' => 0, // percent between 0-100
+        'sameType' => 0, // percent between 0-100
+        'double' => 0 // percent between 0-100
+    ],
 ]);
 
 $words = [];
 $words[] = strtoupper($faker->words(14, '.', 2, 4));
 
 print_r($words);
-
-
-

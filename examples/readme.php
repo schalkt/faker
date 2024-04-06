@@ -29,26 +29,26 @@ $items[] = $faker->date(); // 2001-07-21
 $items[] = $faker->date('2024-01-01', '2024-12-31', 'Y.m.'); // 2024.02.
 
 $faker = Faker::init([
-	'vowels' => 'e',
-	'consonants' => 'bhdlmnkpstvz',
-	'nextChar' => [
-		'sameChar' => 0, // percent between 0-100
-		'sameType' => 0, // percent between 0-100
-		'double' => 0 // percent between 0-100
-	],
+    'vowels' => 'e',
+    'consonants' => 'bhdlmnkpstvz',
+    'nextChar' => [
+        'sameChar' => 0, // percent between 0-100
+        'sameType' => 0, // percent between 0-100
+        'double' => 0 // percent between 0-100
+    ],
 ]);
 
 $items[] = $faker->text(20, 3, 10); // Sedev emeze evekem ez denebebekepep
 
 
 $faker = Faker::init([
-	'vowels' => 'ioue',
-	'consonants' => 'nm',
-	'nextChar' => [
-		'sameChar' => 70, // percent between 0-100
-		'sameType' => 70, // percent between 0-100
-		'double' => 0 // percent between 0-100
-	],
+    'vowels' => 'ioue',
+    'consonants' => 'nm',
+    'nextChar' => [
+        'sameChar' => 70, // percent between 0-100
+        'sameType' => 70, // percent between 0-100
+        'double' => 0 // percent between 0-100
+    ],
 ]);
 
 $items[] = $faker->text(20, 3, 10); // Sedev emeze evekem ez denebebekepep
